@@ -3,7 +3,6 @@
   padding: 0;
 }
 
-/* 
 #uniqueid {
   color: blue;
 }
@@ -45,56 +44,4 @@ button[type="submit"] {
   background-color: transparent;
   padding: 0 10px;
   border-style: dashed;
-  
-} */
-
-.container {
-  margin: 73px auto 0 auto;
-  max-width: 1200px;
-  text-align: center;
 }
-
-h3 {
-  font-size: 48px;
-  margin-bottom: 50px;
-}
-
-p {
-  border-radius: 15px;
-  font-size: 32px;
-  margin-top: 30px;
-  padding: 10px 0;
-}
-
-.firstP {
-  border: 1px solid black;
-}
-
-.secondP {
-  color: white;
-  background-color: black;
-}
-
-.thirdP {
-  font-weight: bold;
-  color: white;
-  background-color: red;
-  padding: 65px 0;
-}
-
-.img_heart {
-  margin: 0 auto;
-  max-width: 470px;
-  padding-right: 35%;
-}
-
-.heart {
-  max-width: 470px;
-}
-
-/* .img_heart{
-width: 478px;
-height: 453px;
-
-background: url(https://w7.pngwing.com/pngs/568/376/png-transparent-heart-heart-heart.png);
-} */
