@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.head{
+  background-color: #3D3D3D;
+  color: white;
+  font-size: 24px;
+  padding: 8px;
+}
+.body{
+  background-color: #ADD8E6;
+  font-size: 16px;
+  padding: 8px;
+}
+.description{
+  margin: 16px 0;
+}
+.list{
+  border-radius: 8px;
+  background-color: aqua;
+  list-style-type: none;
+  margin-top: 16px;
+  padding: 8px;
+}
+.title{
+  margin-bottom: 8px;
+}
