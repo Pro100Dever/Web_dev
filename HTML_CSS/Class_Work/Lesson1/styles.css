@@ -1,8 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
 body {
-    background-color: lightblue;
-  }
-  p{
-    font-size: 24px;
-    display: inline-block;
-    margin:10px;
-  }
+  background-color: aquamarine;
+}
+
+h1 {
+  color: red;
+  /*
+    border-рамка
+    border: 1-размер, 2-тип, 3-цвет
+  */
+  border: 1px solid magenta;
+  background-color: rgb(78, 143, 39);
+}
+
+p {
+  background: magenta;
+  border: 5px solid teal;
+  color: white;
+  width: 150px;
+}
+
+div {
+  width: 425px;
+  height: 200px;
+  background-image: url(https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_3x4.jpg);
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #000;
+}
+img{
+width: 150px;
+}
