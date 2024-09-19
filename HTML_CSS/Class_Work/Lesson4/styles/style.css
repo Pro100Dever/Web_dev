@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.text {
+  width: 800px;
+  margin: 0 auto;
+  height: 100vh;
+  /* background-color: teal; */
+  border: 2px solid red;
+  /* background-image: url('../assets/cat.webp'); */
+  /* принимает 2 значени - высота, ширина */
+  /* background-size: contain; */
+  /* background-repeat: no-repeat; */
+  /* принимает 2 значения - ось x ось y */
+  /* background-position: top center; */
+  /* первое значени - url, backbround-repeat, background-position, background-size */
+  background: url('../assets/cat.webp') no-repeat top center / contain teal;
+}
+
+/* .img {
+  height: 100vh;
+  background: url("../image/Image20240919125944.jpg") no-repeat no-repeat top center / cover;
+
+}
+
+.list {
+  background: rgba(0, 0, 0, 0.2);
+  width: 437px;
+  height: 93px;
+  border: 1px solid black;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+}
+.list__item{
+  margin: 30px auto;
+}
+
+.ta {
+  display: flex
+}
+
+.title {
+  color: white;
+  text-decoration: none;
+  margin: 6px;
+}
+
+.quadrat {
+  background: white;
+  width: 28px;
+  height: 33px;
+} */
+/*  .subtitle{
+  font-size: 30px;
+  color: #12ac11;
+  line-height: 1.2em;
+  display: inline-block;
+  Border-bottom: 1px solid black;
+ }
+ .list{
+  margin: 20px;
+  font-size: 20px;
+  color: #444;
+  font-style: italic;
+  list-style: none;
+   list-style: square; 
+ } */
+
+ 
+  .table{
+    border: 3px solid red;
+  }
+ 
+ 
