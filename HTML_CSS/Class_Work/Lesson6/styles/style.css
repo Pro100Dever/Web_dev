@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* 
+.box{
+  width: 45px;
+  height: 45px;
+  background: red;
+}
+
+.container{
+  width: 500px;
+  height: 250px;
+  margin: 10px auto;
+  border: 2px solid black; 
+  flex-direction: column; 
+  justify-content - выравнивание по горизонтали 
+    align-items - выравнивание элементов по вертикали
+    gap - задает растоение между элементами в флексе и гриде
+    
+
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.box2{
+  width: 45px;
+  height: 45px;
+  background: red;
+}
+
+.container2{
+  width: 500px;
+  height: 250px;
+  margin: 10px auto;
+  border: 2px solid black;
+
+  display: flex;
+  justify-content: end;
+  align-items: end;
+
+}  */
+
+/* .list__item, .title {
+  list-style: none;
+  font-weight: 400;
+  font-size: 36px;
+  color: #000;
+}
+*/
+
+/*
+.list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.title{
+  margin-top: 120px;
+  text-align: center;
+}
+ */
+ ul{
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+img{
+  width: 100px;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  
+}
+ .tt{
+  display: flex;
+  align-items: center;
+ }
+ .list{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+ }
+ .menu{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+ }
+ .sing-in{
+  display: flex;
+  align-items: center;
+ }
+ .input{
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+ }
+ .sing-up,.sing-in{
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+ }
+ .sing-up{
+  background-color: blueviolet;
+  color: white;
+ }
+ span{
+  margin: auto 5px;
+ }
