@@ -7,75 +7,81 @@
     <title>Document</title>
   </head>
   <body>
-    <!--     <div class="container">
-      <div class="box"></div>
-       <div class="box box1">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-    <div class="box">5</div>
-    </div>
-    <div class="container2">
-      <div class="box2"></div>
-    </div> -->
-
-<!--     <header class="header">
-      <ul class="list">
-        <li class="list__item">
-          <a href="./index.html"> Home </a>
+    <!--     <header class="header">
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="./index.html">Home</a>
         </li>
-        <li class="list__item">
-          <a href="./index.html"> About </a>
+        <li class="menu__item">
+          <a href="./index.html">Product</a>
         </li>
-        <li class="list__item">
+        <li class="menu__item">
           <a href="./index.html">
-            <img src="./img/Image20240923112105.png" alt="Cat" />
+            <div class="circle"></div>
           </a>
         </li>
-        <li class="list__item">
-          <a href="./index.html"> Shop </a>
+        <li class="menu__item">
+          <a href="./index.html">FAQ</a>
         </li>
-        <li class="list__item">
-          <a href="./index.html"> Contacts </a>
+        <li class="menu__item">
+          <a href="./index.html">Information</a>
         </li>
       </ul>
-    </header>
-    <main class="main">
-      <h2 class="title">About</h2>
-    </main> -->
-    <header class="header">
-      <div class="tt">
-      <div class="Logo">
-        <img src="./img/logo-purple.svg" alt="Logo">
+    </header> -->
+
+    <!--    <form>
+      <fieldset>
+        <legend>Das ist input</legend>
+        <input type="text" placeholder="Login" />
+        <input type="submit" />
+      </fieldset>
+    </form>
+    <br>
+    <form >
+      <div class="form__field">
+        <label for="username">username</label>
+        <input type="text" name="username" id="username">
       </div>
-      <div class="menu">
-      <ul class="list">
-        <li class="list__item">
-          <a href="./index.html"> Product </a>
-        </li>
-        <li class="list__item">
-          <a href="./index.html"> Marketplace </a>
-        </li>
-        <li class="list__item">
-          <a href="./index.html"> Pricing </a>
-        </li>
-        <li class="list__item">
-          <a href="./index.html"> Documentation </a>
-        </li>
-        <li class="list__item">
-          <a href="./index.html"> Support </a>
-        </li>
-        <li class="list__item">
-          <a href="./index.html"> More </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-    <div class="sing-in">
-      <input type="text" class="input">
-      <button type="submit" class="sing-in">Lgin in</button>
-      <span>or</span>
-      <button type="submit" class="sing-up">Sing up</button>
-    </div>
-    </header>
+      <div class="form__field">
+        <label for="password">password</label>
+        <input type="password" name="password" id="password">
+      </div>
+    </form> -->
+
+    <!--     <main class="main">
+      <form class="form">
+        <h3 class="title">Купить в 1 клик</h3>
+        <div class="form__field">
+          <label for="username">Ф.И.О. <span>*</span> </label>
+          <input type="text" name="username" id="username" required />
+        </div>
+        <div class="form__field">
+          <label for="telefon"
+            >Телефон
+            <span>*</span>
+          </label>
+          <input type="text" name="telefon" id="telefon" required />
+        </div>
+        <div class="form__field">
+          <label class="checkbox" for="checkbox">
+            <input type="checkbox" name="checkbox" id="checkbox" /> Я согласен
+            на
+            <a href="./index.html"> обработку персональных данных </a>
+          </label>
+        </div>
+        <button type="submit" class="submit">Отправить</button>
+      </form>
+    </main> -->
+
+    <form class="form">
+      <label for="age">Wie fiele jare?</label>
+      <input type="number" min="7" max="100" id="age" />
+      <button type="submit">Submit</button>
+    </form>
+    <form class="form">
+      <label for="Email">Diene Email</label>
+      <input type="email" id="Email" required />
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
