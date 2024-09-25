@@ -101,6 +101,7 @@ a {
 }
 
 .footer {
+  position: relative;
   background: #d3d3d3;
   width: 100%;
   height: 259px;
@@ -122,5 +123,6 @@ a {
 }
 .footer__image{
   position: absolute;
+  top: 12px;
   left: 12px;
 }
