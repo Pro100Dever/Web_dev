@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.button {
+  margin: 10px;
+  padding: 10px 15px;
+  background: blueviolet;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+span::after {
+  content: 'Нажми меня';
+}
+
+.button:hover {
+  background: transparent;
+  border: none;
+  color: blueviolet;
+  border: 2px solid blueviolet;
+}
+
+/* .button:active {
+  background: transparent;
+  border: none;
+  color: blueviolet;
+  border: 2px solid blueviolet;
+} */
+
+.button:active span::after {
+  content: 'Нажми меня - кнопка нажата';
+}
