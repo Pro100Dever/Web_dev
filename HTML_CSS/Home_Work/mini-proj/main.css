@@ -13,7 +13,9 @@ a {
   text-decoration: none;
   color: #000;
 }
-
+body{
+  background: rgba(65, 179, 111, 0.83);
+}
 .header {
   width: 100%;
   padding-top: 30px;
@@ -37,7 +39,6 @@ a {
 
 /* ------------------------------------- */
 .bacground-svg {
-  background: rgba(65, 179, 111, 0.83);
   width: 100%;
   height: 140vh;
   position: absolute;
