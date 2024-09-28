@@ -74,30 +74,35 @@ a {
   flex-wrap: wrap;
 }
 
-.shop__list_item {
+.shop__list-item {
   text-align: center;
   width: 202px;
 }
 
-.shop__list_image {
+.shop__list-image {
   background: url(../img/image.png) no-repeat top center / cover;
   height: 315px;
 }
 
-.shop__list_title {
+.shop__list-title {
   margin-top: 10px;
 }
 
-.shop__list_description {
+.shop__list-description {
   margin-bottom: 46px;
   font-size: 14px;
 }
 
-.shop__list_choice {
+.shop__list-button {
   border: 1px solid #000;
   width: 156px;
   height: 44px;
   background: transparent;
+}
+.shop__list-button:hover {
+  border: none;
+  color: white;
+  background: gray;
 }
 
 .footer {
@@ -107,7 +112,7 @@ a {
   height: 259px;
   z-index: 4;
 }
-.list{
+.footer__list{
   padding-top: 22px;
   display: flex;
   justify-content: center;
@@ -115,13 +120,13 @@ a {
   z-index: 4;
   
 }
-.list__box{
+.footer__list-box{
   display: flex;
   flex-direction: column;
   gap: 111px;
   z-index: 4;
 }
-.list__description{
+.footer__list-description{
   text-align: center;
   font-size: 14px;
   z-index: 4;

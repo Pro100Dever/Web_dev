@@ -2,5 +2,311 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Rubik", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.header {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.header>div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo {
+  width: 185px;
+  height: 43px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* ------------------------------------- */
+.bacground-svg {
+  background: rgba(65, 179, 111, 0.83);
+  width: 100%;
+  height: 140vh;
+  position: absolute;
+  top: 0;
+  z-index: -99;
+}
+
+.svg {
+  position: absolute;
+  transform: translate(50%, 15%);
+  z-index: -20;
+}
+
+.svg1 {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: -10;
+}
+
+.bacground {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -11;
+}
+
+.bacground__img-phone2 {
+  position: absolute;
+  right: 370px;
+  top: 570px;
+  z-index: -8;
+}
+
+.bacground__img-phone1 {
+  position: absolute;
+  right: 410px;
+  top: 435px;
+  z-index: -9;
+}
+
+/* --------------------------------------- */
+.menu__item>a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu__item:hover {
+  opacity: 0.4;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.about {
+  display: flex;
+  gap: 30px;
+  max-width: 1300px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 70px auto 20px auto;
+  position: relative;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 68px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.about__text {
+  display: inline-block;
+  width: 482px;
+  font-weight: 300;
+  font-size: 18px;
+  color: #fff;
+}
+
+.about>h2 {
+  font-weight: 500;
+  font-size: 68px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.about__img {
+  position: absolute;
+  right: 130px;
+  top: 10px;
+  z-index: 2;
+}
+
+.about::after {
+  content: '';
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: #ffe000;
+  position: absolute;
+  right: 100px;
+  top: -20px;
+  z-index: 1;
+}
+
+
+/*------------------------------------- */
+
+
+.phones {
+  padding-top: 80px;
+}
+
+
+.card {
+  border-radius: 25px;
+  background: white;
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 45px;
+  position: relative;
+  box-shadow: 5px 4px 9px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:nth-child(3) {
+  left: 49%;
+  top: 19px;
+  z-index: 5;
+  width: 275px;
+  z-index: -12;
+}
+
+.card:nth-child(4) {
+  left: 540px;
+  top: 130px;
+  width: 275px;
+  z-index: 4;
+}
+
+.card:nth-child(5) {
+  left: 1120px;
+  top: -50px;
+  width: fit-content;
+  z-index: 5;
+}
+
+.card:nth-child(3) {
+  width: fit-content;
+}
+
+.card::after {
+  content: '';
+  border-radius: 1000px;
+  width: 62px;
+  height: 62px;
+  background: #ffe000;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+
+}
+
+.card__title {
+  font-size: 24px;
+  color: #000;
+  font-weight: bold;
+}
+
+.card__list {
+  margin-top: -45px;
+}
+
+.card:last-child>.card__title {
+  margin-bottom: -36px;
+}
+
+.card__icon {
+  width: 25px;
+  height: 25px;
+  padding: 18px;
+  z-index: 2;
+}
+
+.card__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 14px;
+}
+
+
+.card__list-item>svg {
+  z-index: 3;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+}
+
+.box-main::before {
+  content: '';
+  border-radius: 5px;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 3px;
+  left: -28px;
+  z-index: 1;
+}
+
+.box-main1::before {
+  background: #d8e1ee;
+}
+
+.box-main2::before {
+  background: #d8eeec;
+}
+
+.box-main3::before {
+  background: #e6eed8;
+}
+
+.box-main4::before {
+  background: #eed8e6;
+}
+
+.box>span {
+  font-size: 9px;
+  text-align: right;
+  line-height: 11px;
+  width: 55px;
+}
+
+.box>h5 {
+  font-size: 11px;
+  line-height: 18px;
+  color: #181c16;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid #7e7e7e;
+  border-radius: 200px;
+  padding: 25px 50px;
+}
+
+.google-button {
+  text-align: start;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.google-button>b {
+  font-size: 21px;
+}
+
+.google-form {
+  position: relative;
+  top: -100px;
+  left: 15%;
 }
