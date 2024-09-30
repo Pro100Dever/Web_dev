@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.box{
+  background: pink;
+  padding-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  row-gap: 100px;
+}
+.box__item{
+  width: 100px;
+  height: 100px;
+  background: lightskyblue;
+  border-radius: 8px;
+}
+.box__item>p{
+  margin: 10px;
+}
