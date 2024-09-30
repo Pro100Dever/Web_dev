@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+/* .paragraph> :nth-child(3)::after{
+  content: 'hello from psewdoel';
+  font-size: 20px;
+  color: red;
+}
+.paragraph> :nth-child(3)::before{
+  content: 'hello from psewdoel';
+  font-size: 20px;
+  color: red;
+} */
+
+/* .paragraph>p {
+  margin: 20px;
+}
+
+.paragraph> :nth-child(3) {
+  position: relative;
+}
+
+.paragraph> :nth-child(3)::before {
+  content: '';
+  top: 0;
+  left: -10px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background: red;
+  border-radius: 50%;
+}*/
+
+.list1 {
+  list-style: none;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: 100px 250px 100px;
+  /* Задаем размер горизонтали + Делит на фракции */
+  /* grid-template-rows: 1fr 300px; */
+  /* Задаем размер вертикали + Делит на фракции */
+  row-gap: 50px;
+  justify-content: center;
+  justify-items: center;
+  /* Выравнивает по горизонтали */
+  align-items: center;
+  /* Выравнивает по вертикали */
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 50px;
+  justify-items: center;
+  align-items: center;
+}
+
+.list>li {
+  background: red;
+  width: 100px;
+  height: 50px;
+}
+
+.list2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  margin-top: 75px;
+  row-gap: 30px;
+  grid-column-start: 3;
+}
+
+.list2>li {
+  width: 100px;
+}
+
+.list2>li:last-child{
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+.list2>li:first-child{
+  position: absolute;
+  grid-column-start: 3;
+  grid-row-end: 4;
+}
+
+.list2>li>img {
+  width: 100px;
+  height: 100px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
