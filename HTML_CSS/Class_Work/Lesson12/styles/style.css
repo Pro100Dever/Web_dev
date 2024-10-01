@@ -135,7 +135,7 @@ ul {
   background: none;
   margin-bottom: 6px;
 }
-
+/* 
 @media (max-width: 1200px) {
   .main {
     padding: 0;
@@ -173,8 +173,8 @@ ul {
     padding: 8px;
   }
 }
+ */
 
-/* 
 @media (max-width: 428px) {
   .to-do {
     padding: 16px;
@@ -266,4 +266,4 @@ ul {
     line-height: 20px;
   }
 
-} */
+}
