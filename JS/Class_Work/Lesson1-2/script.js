@@ -1,4 +1,4 @@
-/* 
+/*
 const timeWithoutTeacher = 20
 const isTeacherLeft = true
 
@@ -57,5 +57,3 @@ if (input >= 6 && input <= 11) {
 // } else {
 //     console.log("Очень плохо!");
 // }
-
-
