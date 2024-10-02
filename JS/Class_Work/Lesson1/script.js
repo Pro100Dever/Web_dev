@@ -38,9 +38,11 @@ const userName = 'Volodymyr'
 const firstNumber = 1
 const secondNumber = 5
 
-const sum = "Hello, my name is" + userName + 'my age is ' + secondNumber + ' etwas';
+const sum = "Hello, my name is " + userName + ' my age is ' + secondNumber + ' etwas';
 console.log(sum)
 
 // интерпаляция
 const sum1 = `Hello, my name is ${userName} my age is ${secondNumber} etwas`;
 console.log(sum1)
+
+
