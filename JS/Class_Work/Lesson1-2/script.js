@@ -13,7 +13,7 @@ const a = 10
 const b = 30
 const c = a + b
 
-let resul = (c > b) ? console.log(`ist more`) : console.log(`its less`)
+let result = (c > b) ? console.log(`ist more`) : console.log(`its less`)
 if (c > 40) {
     console.log(`ist more`)
 }
@@ -25,11 +25,11 @@ else {
 /* const input = prompt(`Write your time (Uhr):`)
 
 if (input >= 6 && input <= 11) {
-    console.log("Доброе утро!")
+    console.log("Guten Morgen!")
 } else if (input >= 12 && input <= 17) {
-    console.log("Добрый день!")
+    console.log("Guten Tag!")
 } else if (input >= 18 && input <= 22) {
-    console.log("Добрый вечер!")
+    console.log("Guten Abend!")
 } else {
     console.log("Доброй ночи!")
 } */
@@ -46,14 +46,14 @@ if (input >= 6 && input <= 11) {
 
 // const userPunkt = 3;
 
-// if (userPunkt < 2) {
-//     console.log("Отлично");
-// } else if (userPunkt < 3) {
-//     console.log("Хорошо");
-// } else if (userPunkt < 4) {
-//     console.log("Удовлетворительно");
-// } else if (userPunkt < 5) {
-//     console.log("Плохо");
-// } else {
-//     console.log("Очень плохо!");
-// }
+/* if (userPunkt < 2) {
+  console.log('Отлично')
+} else if (userPunkt < 3) {
+  console.log('Хорошо')
+} else if (userPunkt < 4) {
+  console.log('Удовлетворительно')
+} else if (userPunkt < 5) {
+  console.log('Плохо')
+} else {
+  console.log('Очень плохо!')
+} */
