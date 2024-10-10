@@ -50,20 +50,31 @@ const fruit = [
     name: 'Leanne Graham',
     username: 'Bret',
     email: 'Sincere@april.biz',
-  },
-  passport: {
-    breed: 'semi - Angora',
-    mom: 'Angora',
-    father: 'Homeless',
-    microchip: {
+
+    passport: {
+      breed: 'semi - Angora',
+      mom: 'Angora',
+      father: 'Homeless',
+      microchip: {
         address: 'Avenida Portugal 1288',
         id: 2582457824,
         vacineDate: '24.10.24',
         procedures: ['exame FIV', '...'],
-        vacines: ['vacine1', 'vacine12', 'vacine16', 'vacine14', 'vacine13', 234, false, true, 'dsdsdd']
+        vacines: [
+          'vacine1',
+          'vacine12',
+          'vacine16',
+          'vacine14',
+          'vacine13',
+          234,
+          false,
+          true,
+          'dsdsdd',
+        ],
+      },
     },
-    isVacinated: true
-},
+    isVacinated: true,
+  },
 ]
 console.log(fruit[0])
 console.log(fruit[fruit.length - 1])
