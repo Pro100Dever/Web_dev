@@ -21,4 +21,24 @@ random text`
 const content = document.querySelector('.content')
 const title2 = document.createElement('h5') // создаем елемент
 title2.innerText = 'New title from JS' // задаем тект для елемента
-content.append(title2) // вкладываем елементы в конец елемта к которому применяется
+content.append(title2) // вкладываем елементы в конец елемента к которому применяется
+
+const box2 = document.querySelector('.box2')
+
+const createLists = count => {
+  const list = document.createElement('ul')
+  for (let i = 0; i < count; i++) {
+    const listItem = document.createElement('li')
+    listItem.className = 'list__item'
+    listItem.textContent = `#${i + 1}`
+    list.append(listItem)
+  }
+  return list
+}
+box2.append(createLists(4))
+
+/* const res = document.querySelectorAll('.list__item')
+console.log(res)
+
+const arr = ['dsgdg', 3, 5, 6]
+console.log(arr) */
