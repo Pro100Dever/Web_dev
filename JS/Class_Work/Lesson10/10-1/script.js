@@ -20,9 +20,20 @@ const title = document.querySelector('.title')
 console.log(box1)
 console.log(paragraph1)
 console.log(title)
-// HTMLcolection коллекция только елементов
-// NodeList колекция узлов
 
 title.textContent = 'first try'
 // title.innerText = 'Я не знаю что писать'
 // title.innerHTML = ''
+
+// HTMLcolection коллекция только елементов
+// NodeList колекция узлов
+/* 
+<ul> = елемент
+
+А это узел:
+<ul id='tt'>
+    <li class='par'>sdsf</li>
+    <li class='par'>sdfsd</li>
+    <h3 class='title'>title</h3>
+</ul>
+*/
