@@ -1,0 +1,15 @@
+.content {
+  padding: 10px;
+  color: white;
+  background: black;
+  border: 2cqb solid rgba(255, 0, 0, 0.582);
+  border-radius: 8px;
+}
+.span {
+  background: black;
+  color: red;
+  font-size: 100px;
+}
+.active {
+  color: red;
+}
