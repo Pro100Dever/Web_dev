@@ -97,15 +97,20 @@ showBtn.addEventListener('click', () => {
 //=====================================10
 const arr = ['./img/image.png', './img/meme.jpg']
 const image = document.createElement('img')
-image.setAttribute('src', arr[0])
-document.body.append(image)
-
 const changeBtn = document.createElement('button')
-changeBtn.textContent = 'Change'
+
+document.body.append(image)
 document.body.append(changeBtn)
 
+changeBtn.textContent = 'Change'
+let countArr = 0
+image.setAttribute('src', arr[countArr])
+
 changeBtn.addEventListener('click', () => {
-  image.getAttribute('src') === './img/image.png'
-    ? image.setAttribute('src', arr[1])
-    : image.setAttribute('src', arr[0])
+  if (countArr == arr.length - 1) {
+    countArr = 0
+  } else {
+    countArr += 1
+  }
+  image.setAttribute('src', arr[countArr])
 })
