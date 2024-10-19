@@ -1,16 +1,19 @@
 const dataList = [
   {
     userName: 'Stanley Cooper',
+    userImg: './img/image.png',
     aboutUser:
       'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem',
   },
   {
     userName: 'Stanley Cooper',
+    userImg: './img/image.png',
     aboutUser:
       'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem',
   },
   {
     userName: 'Stanley Cooper',
+    userImg: './img/image.png',
     aboutUser:
       'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem',
   },
@@ -30,7 +33,7 @@ function createCard(data) {
   aboutUser.classList.add('text')
   listBtn.classList.add('list-btn')
 
-  image.setAttribute('src', './img/image.png')
+  image.setAttribute('src', data.userImg)
   listBtn.setAttribute('type', 'submit')
 
   //добавляем котент
@@ -51,7 +54,7 @@ function createModallistitem(data) {
   const modalParagraph = document.createElement('p')
 
   modalItem.classList.add('modal__item')
-  modalImage.setAttribute('src', './img/image.png')
+  modalImage.setAttribute('src', data.userImg)
 
   modalParagraph.textContent = data.aboutUser
   modalItem.append(modalImage, modalParagraph)
