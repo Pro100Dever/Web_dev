@@ -85,3 +85,53 @@ function calcSum(numArr) {
   return count
 }
 console.log(calcSum(arr))
+
+/* function minValue(arr, n) {
+  let newArr = []
+  let newArr1 = []
+  for (let i = 0; i <= arr.length - n; i++) {
+    newArr = arr.slice(i, i + n)
+    newArr1.push(Math.min(...newArr))
+  }
+  return newArr1
+} */
+/* function minValue(arr, n) {
+  let newArr = []
+  for (let i = 0; i <= arr.length - n; i++) {
+    newArr.push(Math.min(...arr.slice(i, i + n)))
+  }
+  return newArr
+} */
+
+// console.log(minValue([1, 2, 3, 10, -5], 2))
+// console.log(minValue([1, -2, 3, -4, 5, -6, 7, 8], 4))
+
+/* const arr3 = 153
+console.log(narcissistic(arr3))
+
+function narcissistic(value) {
+  let arrn = ('' + value).split('').map(Number)
+  let count = 0
+  for (let item of arrn) {
+    count += item ** arrn.length
+  }
+  return count !== value ? false : true
+}
+ */
+
+/* console.log(expandedForm(12))
+console.log(expandedForm(70304))
+
+function expandedForm(num) {
+  num = ('' + num).split('').map(Number)
+  let newArr = []
+  let count = 1
+
+  for (let i = 0; i <= num.length - 1; i++) {
+    num[i] == 0
+      ? count++
+      : (newArr.push(num[i] * Math.pow(10, num.length - count)), count++)
+  }
+  return newArr.join(' + ')
+}
+ */
