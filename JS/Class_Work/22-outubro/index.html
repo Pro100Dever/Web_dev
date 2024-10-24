@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="adaptiv.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/adaptiv.css" />
+    <script defer src="./index.js"></script>
   </head>
   <body>
     <main>
@@ -162,6 +164,77 @@
         </div>
       </section>
       <!-- ---------------------------------- -->
+      <section class="form">
+        <div class="form__top">
+          <h3>Get Hotsauce updates</h3>
+          <p>
+            Join us next year for more visionary keynotes, peer-led roundtables,
+            Hotjar masterclasses, and new connections. Be the first to learn
+            about HOTSAUCE 2024 by subscribing to our newsletter.
+          </p>
+        </div>
+        <form action=""></form>
+      </section>
+      <section class="faqs">
+        <div class="container">
+          <div class="faqs__list">
+            <div class="accordion" id="accordion1">
+              <div class="accordion__top">
+                Who is this for?
+                <img
+                  id="acc-arrow1"
+                  src="./assets/icons/acc-arrow.svg"
+                  alt="icon"
+                />
+              </div>
+              <div class="accordion__bottom">
+                HOTSAUCE is for anyone working in marketing, product, UX design,
+                and ecommerce but if you own a website or product you want to
+                improve, you’ll also find it useful. The aim is to inspire you
+                by giving you the tools you need to empathize with your audience
+                and improve your digital experience.
+              </div>
+            </div>
+            <div class="accordion" id="accordion2">
+              <div
+                class="accordion__top"
+                onclick="toggleAccordion('accordion2')"
+              >
+                Who is this for?
+                <img
+                  id="acc-arrow2"
+                  src="./assets/icons/acc-arrow.svg"
+                  alt="icon"
+                />
+              </div>
+              <div class="accordion__bottom">
+                HOTSAUCE is for anyone working in marketing, product, UX design,
+                and ecommerce but if you own a website or product you want to
+                improve, you’ll also find it useful. The aim is to inspire you
+                by giving you the tools you need to empathize with your audience
+                and improve your digital experience.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <div class="cookies">
+      <div class="cookies__left">
+        <h3>Cookies</h3>
+        <p>
+          We use cookies to provide visitors with the best possible experience
+          on our website. These include analytics, functionality, and targeting
+          cookies, which may also be used in our marketing efforts. Click the
+          button to agree to the use of cookies or click ‘Cookie settings’ to
+          manage your preferences. <span>Cookie policy</span>
+        </p>
+      </div>
+      <div class="cookies__right">
+        <a href="/">Cookie settings</a>
+        <button>Reject All</button>
+        <button id="accept__cookie">Accept</button>
+      </div>
+    </div>
   </body>
 </html>

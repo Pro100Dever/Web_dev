@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  background: blueviolet;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  background: teal;
+  padding: 15px;
+  width: fit-content;
+  color: white;
+  border-radius: 12px;
+}
+.form-top,
+.form-bottom {
+  display: flex;
+  gap: 5px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+input {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+}
+.form-bottom > .form-field {
+  width: 100%;
+}
+.checkbox {
+  display: block;
+  margin: 10px auto 0;
+}
+.error {
+  margin-top: 10px;
+  text-align: center;
+}
