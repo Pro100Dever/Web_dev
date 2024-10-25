@@ -3,21 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/adaptiv.css" />
-    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./adaptive.css" />
+    <title>Document</title>
   </head>
   <body>
     <main>
       <section class="intro">
-        <div class="intro-top">
-          <h4>November 2nd-3rd 2023 | NEw Center, Berline</h4>
+        <div class="intro__top">
+          <h4>November 2nd-3rd 2023 | New Center, Berline</h4>
           <button>See you in 2024</button>
         </div>
         <div class="container">
@@ -38,179 +36,267 @@
                   first to learn about HOTSAUCE 2024 by subscribing to our
                   newsletter.
                 </p>
-                <button>Get update</button>
+                <button>GET UPDATES</button>
               </div>
               <div class="main-content__right">
-                <img src="./assets/icons/join-icon.svg" alt="join-icon" />
+                <img src="./assets/icons/join-icon.svg" alt="" />
               </div>
             </div>
           </div>
         </div>
-        <div class="promo">
-          <h3>
-            Be the first to know <br />
-            about HOTSAUCE 2024
-          </h3>
-          <a>Get Updates</a>
+      </section>
+      <div class="promo">
+        <h2>Be the first to know about HOTSAUCE 2024</h2>
+        <button>Get Updates</button>
+      </div>
+      <section class="speakers">
+        <h3></h3>
+        <div class="container">
+          <ul class="speakers__list">
+            <li>
+              <img src="./assets/pics/speaker-1.png" alt="" />
+              <div>Founder</div>
+              <div>Heydays</div>
+              <a href="/">view bio</a>
+            </li>
+            <li>
+              <img src="./assets/pics/speaker-1.png" alt="" />
+              <div>Founder</div>
+              <div>Heydays</div>
+              <a href="/">view bio</a>
+            </li>
+            <li>
+              <img src="./assets/pics/speaker-1.png" alt="" />
+              <div>Founder</div>
+              <div>Heydays</div>
+              <a href="/">view bio</a>
+            </li>
+            <li>
+              <img src="./assets/pics/speaker-1.png" alt="" />
+              <div>Founder</div>
+              <div>Heydays</div>
+              <a href="/">view bio</a>
+            </li>
+            <li>
+              <img src="./assets/pics/speaker-1.png" alt="" />
+              <div>Founder</div>
+              <div>Heydays</div>
+              <a href="/">view bio</a>
+            </li>
+            <li>
+              <img src="./assets/pics/speaker-1.png" alt="" />
+              <div>Founder</div>
+              <div>Heydays</div>
+              <a href="/">view bio</a>
+            </li>
+          </ul>
         </div>
       </section>
-      <!-- ---------------------------------- -->
-      <section class="speakers">
-        <h2 class="speakers__title">Our Speakers</h2>
-        <ul class="speakers__list">
-          <li class="speakers__list-item">
-            <img src="./assets/pics/speaker-3.png" alt="" />
-            <h3>Keisha Mabry</h3>
-            <div class="speakers__list-text">
-              Founder <br />
-              <span>Heydays</span>
-            </div>
-            <a href="./index.html">View Bio</a>
-          </li>
-          <li class="speakers__list-item">
-            <img src="./assets/pics/speaker-1.png" alt="" />
-            <h3>Chris Do</h3>
-            <div class="speakers__list-text">
-              Founder <br />
-              <span>The Futur</span>
-            </div>
-            <a href="./index.html">View Bio</a>
-          </li>
-          <li class="speakers__list-item">
-            <img src="./assets/pics/speaker-5.png" alt="" />
-            <h3>Rand Fishkin</h3>
-            <div class="speakers__list-text">
-              Cofounder & CEO <br />
-              <span>SparkToro</span>
-            </div>
-            <a href="./index.html">View Bio</a>
-          </li>
-          <li class="speakers__list-item">
-            <img src="./assets/pics/speaker-2.png" alt="" />
-            <h3>Ioana Teleanu</h3>
-            <div class="speakers__list-text">
-              Lead Product Designer, AI <br />
-              <span>Miro</span>
-            </div>
-            <a href="./index.html">View Bio</a>
-          </li>
-          <li class="speakers__list-item">
-            <img src="./assets/pics/speaker-4.png" alt="" />
-            <h3>Kyle Poyar</h3>
-            <div class="speakers__list-text">
-              Operating Partner <br />
-              <span>OpenView</span>
-            </div>
-            <a href="./index.html">View Bio</a>
-          </li>
-          <li class="speakers__list-item">
-            <img src="./assets/pics/speaker-6.png" alt="" />
-            <h3>+ Many more industry experts</h3>
-            <a class="last-link" href="./index.html">View all speakers</a>
-          </li>
-        </ul>
-      </section>
-      <!-- ---------------------------------- -->
       <section class="tickets">
         <div class="container">
-          <div class="container_top">
-            <img src="./assets/icons/join-promo.svg" alt="promo" />
-            <img src="./assets/icons/join-icon.svg" alt="icon" />
+          <div class="tickets__top">
+            <img src="./assets/icons/join-promo.svg" alt="" />
+            <img
+              src="./assets/icons/join-icon.svg"
+              alt=""
+              class="logo__hotsauce"
+            />
           </div>
           <div class="tickets__list">
             <div class="tickets__list-item">
-              <div class="tickets__left">
+              <div class="ticket__left">
                 <h3>$319</h3>
-                <div class="tickets__left-center">
+                <div class="ticket__left-center">
                   <div>Super Early Bird</div>
                   <div>Save 46%!</div>
                   <div>Ends July 31</div>
                 </div>
               </div>
-              <div class="sold-out">
-                SOLD<br />
-                OUT
-              </div>
+              <div class="soldout">SOLD <br />OUT</div>
             </div>
             <div class="tickets__list-item">
-              <div class="tickets__left">
+              <div class="ticket__left">
                 <h3>$319</h3>
-                <div class="tickets__left-center">
+                <div class="ticket__left-center">
                   <div>Super Early Bird</div>
                   <div>Save 46%!</div>
                   <div>Ends July 31</div>
                 </div>
               </div>
-              <div class="sold-out">
-                SOLD<br />
-                OUT
-              </div>
+              <div class="soldout">SOLD <br />OUT</div>
             </div>
             <div class="tickets__list-item">
-              <div class="tickets__left">
+              <div class="ticket__left">
                 <h3>$319</h3>
-                <div class="tickets__left-center">
+                <div class="ticket__left-center">
                   <div>Super Early Bird</div>
                   <div>Save 46%!</div>
                   <div>Ends July 31</div>
                 </div>
               </div>
-              <div class="sold-out">
-                SOLD<br />
-                OUT
-              </div>
+              <div class="soldout">SOLD <br />OUT</div>
             </div>
           </div>
         </div>
       </section>
-      <!-- ---------------------------------- -->
-      <section class="form">
-        <div class="form__top">
-          <h3>Get Hotsauce updates</h3>
-          <p>
-            Join us next year for more visionary keynotes, peer-led roundtables,
-            Hotjar masterclasses, and new connections. Be the first to learn
-            about HOTSAUCE 2024 by subscribing to our newsletter.
-          </p>
-        </div>
-        <form action=""></form>
-      </section>
-      <section class="faqs">
+
+      <!-- RESONS -->
+      <section class="reasons">
+        <h3>Three reasons <br />To attend hotsauce</h3>
         <div class="container">
-          <div class="faqs__list">
+          <ul class="reasons__list">
+            <li class="reason__item">
+              <div class="reason__item-left">
+                <h4>Become a digital experiences pro.</h4>
+                <p>
+                  We live and breathe digital experiences for a broad segment of
+                  audiences, so we're here to help you become a true expert in
+                  your craft.
+                </p>
+              </div>
+              <div class="reason__item-right">
+                <img src="./assets/pics/reason-1.jpg" alt="" />
+              </div>
+            </li>
+            <li class="reason__item">
+              <div class="reason__item-right">
+                <img src="./assets/pics/reason-2.jpg" alt="" />
+              </div>
+              <div class="reason__item-left">
+                <h4>Get inspired by hands- on learnings.</h4>
+                <p>
+                  Over 40 collaborative work together sessions will give you
+                  actionable insights you can apply directly when back at the
+                  desk.
+                </p>
+              </div>
+            </li>
+            <li class="reason__item">
+              <div class="reason__item-left">
+                <h4>Hear empowering keynotes.</h4>
+                <p>
+                  Listen to and meet industry leaders who’ve pioneered growth
+                  and innovation in diverse sectors. Gain insights into their
+                  journeys, challenges, and breakthroughs.
+                </p>
+              </div>
+              <div class="reason__item-right">
+                <img src="./assets/pics/reason-3.jpg" alt="" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- RESONS -->
+
+      <section class="form">
+        <div class="container">
+          <div class="form__top">
+            <h3>Get Hotsauce updates</h3>
+            <p>
+              Join us next year for more visionary keynotes, peer-led
+              roundtables, Hotjar masterclasses, and new connections. Be the
+              first to learn about HOTSAUCE 2024 by subscribing to
+              our newsletter.
+            </p>
+          </div>
+          <form class="form__data">
+            <div class="main__form">
+              <div class="form__field">
+                <label for="">First name <span>*</span></label>
+                <input type="text" />
+              </div>
+              <div class="form__field">
+                <label for="">Last name <span>*</span></label>
+                <input type="text" />
+              </div>
+              <div class="form__field">
+                <label for="">Email <span>*</span></label>
+                <input type="text" />
+              </div>
+            </div>
+            <label for="check">
+              <input type="checkbox" id="check" />
+              By checking this box, you agree to our End User Terms and Privacy
+              Policy.
+            </label>
+            <button type="submit" class="submit">Sign Me Up</button>
+          </form>
+        </div>
+        <div class="modal">
+          <div class="modal__container">
+            <button class="close__modal">close</button>
+          </div>
+        </div>
+      </section>
+      <section class="faq">
+        <h3>FAQS</h3>
+        <div class="container">
+          <div class="faq__list">
             <div class="accordion" id="accordion1">
               <div class="accordion__top">
                 Who is this for?
                 <img
-                  id="acc-arrow1"
                   src="./assets/icons/acc-arrow.svg"
-                  alt="icon"
+                  alt="arrow-down"
+                  id="acc-arrow1"
                 />
               </div>
               <div class="accordion__bottom">
                 HOTSAUCE is for anyone working in marketing, product, UX design,
                 and ecommerce but if you own a website or product you want to
-                improve, you’ll also find it useful. The aim is to inspire you
+                improve, you'll also find it useful. The aim is to inspire you
                 by giving you the tools you need to empathize with your audience
                 and improve your digital experience.
               </div>
             </div>
             <div class="accordion" id="accordion2">
-              <div
-                class="accordion__top"
-                onclick="toggleAccordion('accordion2')"
-              >
-                Who is this for?
+              <div class="accordion__top">
+                Is the venue accessible?
                 <img
-                  id="acc-arrow2"
                   src="./assets/icons/acc-arrow.svg"
-                  alt="icon"
+                  alt="arrow-down"
+                  id="acc-arrow2"
                 />
               </div>
               <div class="accordion__bottom">
                 HOTSAUCE is for anyone working in marketing, product, UX design,
                 and ecommerce but if you own a website or product you want to
-                improve, you’ll also find it useful. The aim is to inspire you
+                improve, you'll also find it useful. The aim is to inspire you
+                by giving you the tools you need to empathize with your audience
+                and improve your digital experience.
+              </div>
+            </div>
+            <div class="accordion" id="accordion3">
+              <div class="accordion__top">
+                How sustainable are events at Javits Center?
+                <img
+                  src="./assets/icons/acc-arrow.svg"
+                  alt="arrow-down"
+                  id="acc-arrow3"
+                />
+              </div>
+              <div class="accordion__bottom">
+                HOTSAUCE is for anyone working in marketing, product, UX design,
+                and ecommerce but if you own a website or product you want to
+                improve, you'll also find it useful. The aim is to inspire you
+                by giving you the tools you need to empathize with your audience
+                and improve your digital experience.
+              </div>
+            </div>
+            <div class="accordion" id="accordion4">
+              <div class="accordion__top">
+                What’s included in the ticket price?
+                <img
+                  src="./assets/icons/acc-arrow.svg"
+                  alt="arrow-down"
+                  id="acc-arrow4"
+                />
+              </div>
+              <div class="accordion__bottom">
+                HOTSAUCE is for anyone working in marketing, product, UX design,
+                and ecommerce but if you A own a website or product you want to
+                improve, you'll also find it useful. The aim is to inspire you
                 by giving you the tools you need to empathize with your audience
                 and improve your digital experience.
               </div>
@@ -236,5 +322,6 @@
         <button id="accept__cookie">Accept</button>
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>

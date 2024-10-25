@@ -1,0 +1,125 @@
+@media (max-width: 1440px) {
+  h1 {
+    font-size: 67px;
+  }
+
+  .intro__main-content p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .main-content__right img {
+    max-width: 300px;
+  }
+
+  .intro__main {
+    padding: 180px 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .main-content__right {
+    display: none;
+  }
+
+  .promo {
+    max-width: 700px;
+  }
+
+  .promo h2 {
+    color: white;
+    text-transform: uppercase;
+    max-width: 70%;
+    font-size: 27px;
+  }
+
+  .promo button {
+    padding: 10px 20px;
+    background-color: #323232;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+  }
+
+  .logo__hotsauce {
+    display: none;
+  }
+
+  .tickets__top {
+    justify-content: center;
+  }
+
+  .tickets__list-item {
+    max-width: fit-content;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .ticket__left {
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .ticket__left-center::before {
+    content: '';
+    position: absolute;
+    height: 150px;
+    width: 10px;
+    left: 45%;
+    top: -105%;
+    background: url('../assets/icons/arrow.svg') no-repeat center center /
+      contain;
+    transform: rotate(90deg);
+  }
+
+  .ticket__left-center {
+    text-align: center;
+  }
+
+  .tickets__list-item::before {
+    content: '';
+    position: absolute;
+    top: -177px;
+    left: 47%;
+    background: url('../assets/icons/before.svg') no-repeat center center /
+      contain;
+    width: 15px;
+    height: 340px;
+    transform: rotate(90deg);
+  }
+
+  .tickets__list-item::after {
+    content: '';
+    position: absolute;
+    bottom: -102%;
+    right: 50%;
+    background: url('../assets/icons/after.svg') no-repeat center center /
+      contain;
+    width: 15px;
+    height: unset;
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content__right {
+    display: none;
+  }
+
+  .intro__top {
+    display: none;
+  }
+
+  .intro__main {
+    padding: 80px 0;
+  }
+
+  .intro__main h1 {
+    font-size: 47px;
+    line-height: 60px;
+  }
+}
