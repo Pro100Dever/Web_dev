@@ -10,7 +10,7 @@ function solution(str, ending) {
   }
   return true
 }
-// console.log(solution('abcde', 'cde'))
+console.log(solution('abcde', 'cde'))
 // console.log(solution('abcde', 'abc'))
 
 //=======================
@@ -22,7 +22,7 @@ function past(h, m, s) {
   return (h + m + s) * 1000
 }
 
-// console.log(past(0, 1, 1))
+console.log(past(0, 1, 1))
 // console.log(past(1, 1, 1))
 // console.log(past(0, 0, 0))
 
@@ -46,7 +46,7 @@ function highAndLow(numbers) {
   numbers = numbers.split(' ')
   return `${Math.max(...numbers)} ${Math.min(...numbers)}`
 }
-// console.log(highAndLow('8 3 -5 42 -1 0 0 -9 4 7 4 -4'))
+console.log(highAndLow('8 3 -5 42 -1 0 0 -9 4 7 4 -4'))
 
 /* const div = document.createElement('div')
 div.innerHTML = `Это <em>курсивный</em> текст`
