@@ -34,16 +34,16 @@ const btn = document.querySelector('.btn')
 btn.addEventListener('click', () => {
   h3.textContent = username + ' ' + lastname
 }) */
-const form = document.querySelector('#form')
-const btn = document.querySelector('#btn__value')
-form.addEventListener('submit', e => {
-  e.preventDefault()
-  const target = e.target['input'].value
-  localStorage.setItem('inputValue', target)
-})
-btn.addEventListener('click', () => {
-  const value = localStorage.getItem('inputValue')
-  console.log(value)
+// const form = document.querySelector('#form')
+// const btn = document.querySelector('#btn__value')
+// form.addEventListener('submit', e => {
+//   e.preventDefault()
+//   const target = e.target['input'].value
+//   localStorage.setItem('inputValue', target)
+// })
+// btn.addEventListener('click', () => {
+//   const value = localStorage.getItem('inputValue')
+//   console.log(value)
 
-  document.querySelector('p').textContent = value
-})
+//   document.querySelector('p').textContent = value
+// })
