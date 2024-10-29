@@ -116,15 +116,15 @@ console.log(resWords)
 const numbers5 = [10, 5, 8, 2, 7, 3]
 console.log(numbers5.sort((a, b) => b - a))
 
-const numbers6 = [15, 7, 28, 3, 42, 10]
-const minRange = 10
-const maxRange = 30
+// const numbers6 = [15, 7, 28, 3, 42, 10]
+// const minRange = 10
+// const maxRange = 30
 // function newArr(min, max, arr) {
 //   console.log(arr.filter(item => item > min && item < max))
 // }
-function newArr(min, max, arr) {
-  return arr.filter(item => item > min && item < max)
-}
+// function newArr(min, max, arr) {
+//   return arr.filter(item => item > min && item < max)
+// }
 
 const randomNumArr1 = [4, 2, 8, 10, 23, 5, 8]
 
@@ -175,7 +175,6 @@ let numericArray = [1, 2, 3, 4, 5]
 const ress = numericArray.filter(item => item % 2 === 0).reduce((a, b) => a + b)
 console.log(ress)
 
-let str = 'hello'
 let newStr = 'hellllllooooojejejejejjjjj'
 const formattedArr = Array.from(new Set(newStr))
 console.log(formattedArr)
