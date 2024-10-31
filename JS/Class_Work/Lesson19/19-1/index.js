@@ -5,48 +5,50 @@ const inputPassword = document.querySelector('.password')
 const signupBtn = document.querySelector('.signup')
 const notification = document.createElement('p')
 
+const checkName = document.createElement('h5')
+const checkEmail = document.createElement('h5')
+const checkPhone = document.createElement('h5')
+const checkPassword = document.createElement('h5')
+inputName.insertAdjacentElement('afterend', checkName)
+inputEmail.insertAdjacentElement('afterend', checkEmail)
+inputPhone.insertAdjacentElement('afterend', checkPhone)
+inputPassword.insertAdjacentElement('afterend', checkPassword)
+
 const users = localStorage.getItem('users')
   ? JSON.parse(localStorage.getItem('users'))
   : []
 
 signupBtn.addEventListener('click', () => {
+  chekNameValidation()
+  chekEmailValidation()
+  chekPhonValidation()
+  chekPasswordValidation()
   if (
-    inputName.value === '' ||
-    inputPhone.value === '' ||
-    inputEmail.value === '' ||
-    inputPassword.value === ''
+    chekNameValidation() &&
+    chekEmailValidation() &&
+    chekPhonValidation() &&
+    chekPasswordValidation()
   ) {
-    notification.innerText = 'All fields are required'
-    notification.style.color = 'red'
-  } else {
-    let isError = false
-    users &&
-      users.forEach(item => {
-        if (item.email === inputEmail.value) {
-          isError = true
-        }
-      })
-    if (isError) {
-      notification.innerText = 'User with this email exists'
-      notification.style.color = 'red'
-    } else {
-      const userData = {
-        name: inputName.value,
-        phoneNumbers: inputPhone.value,
-        email: inputEmail.value,
-        password: inputPassword.value,
-      }
-      users.push(userData)
-      localStorage.setItem('users', JSON.stringify(users))
-      inputName.value === ''
-      inputPhone.value === ''
-      inputEmail.value === ''
-      inputPassword.value === ''
-
-      notification.innerText = 'You were successfully signup'
-      notification.style.color = 'green'
+    const userData = {
+      name: inputName.value,
+      phoneNumbers: inputPhone.value,
+      email: inputEmail.value,
+      password: inputPassword.value,
     }
+    users.push(userData)
+    localStorage.setItem('users', JSON.stringify(users))
+    inputName.value = ''
+    inputPhone.value = ''
+    inputEmail.value = ''
+    inputPassword.value = ''
+
+    notification.innerText = 'You were successfully signup'
+    notification.style.color = 'green'
+  } else {
+    notification.innerText = 'Error incorrect value(s)'
+    notification.style.color = 'red'
   }
+
   document.body.appendChild(notification)
 })
 
@@ -86,3 +88,64 @@ loginBtn.addEventListener('click', () => {
   }
   document.body.appendChild(notification)
 })
+
+//====================NAME
+
+function chekNameValidation() {
+  checkName.innerText = ''
+  checkName.style.color = 'red'
+  const re = /[a-zA-Z]/
+  if (inputName.value.length < 2) {
+    checkName.innerText = 'Имя должно быть длинее 2 символов'
+  } else if (inputName.value.length > 24) {
+    checkName.innerText = 'Имя должно быть короче 2 символов'
+  } else if (!inputName.value.match(re)) {
+    checkName.innerText = 'Имя должно быть только буквы'
+  } else {
+    return true
+  }
+}
+
+//=======================EMAIL
+function chekEmailValidation() {
+  checkEmail.innerText = ''
+  checkEmail.style.color = 'red'
+  if (inputEmail.value.length < 7) {
+    checkEmail.innerText = 'Должно быть минимум 7 сиволов'
+  } else if (!inputEmail.value.includes('@')) {
+    checkEmail.innerText = 'Должен быть символ "@"'
+  } else {
+    return true
+  }
+}
+
+//=======================PHON
+function chekPhonValidation() {
+  checkPhone.innerText = ''
+  checkPhone.style.color = 'red'
+  const re = /[0-9+]+/
+  if (inputPhone.value[0] !== '+') {
+    checkPhone.innerText = 'Должен начинаться c "+"'
+  } else if (inputPhone.value.length > 12) {
+    checkPhone.innerText = 'Должен быть не больше 12 цифер'
+  } else if (inputPhone.value.length < 8) {
+    checkPhone.innerText = 'Должен быть минимум 8 цифер'
+  } else if (!inputPhone.value.match(re)) {
+    checkPhone.innerText = 'Должен быть только цифры'
+  } else {
+    return true
+  }
+}
+
+//=======================PASSWORD
+function chekPasswordValidation() {
+  checkPassword.innerText = ''
+  checkPassword.style.color = 'red'
+  if (inputPassword.value.length > 26) {
+    checkPassword.innerText = 'Должен быть не больше 12 цифер'
+  } else if (inputPassword.value.length < 5) {
+    checkPassword.innerText = 'Должен быть минимум 8 цифер'
+  } else {
+    return true
+  }
+}
