@@ -29,21 +29,33 @@ signupBtn.addEventListener('click', () => {
     chekPhonValidation() &&
     chekPasswordValidation()
   ) {
-    const userData = {
-      name: inputName.value,
-      phoneNumbers: inputPhone.value,
-      email: inputEmail.value,
-      password: inputPassword.value,
-    }
-    users.push(userData)
-    localStorage.setItem('users', JSON.stringify(users))
-    inputName.value = ''
-    inputPhone.value = ''
-    inputEmail.value = ''
-    inputPassword.value = ''
+    let isError = false
+    users &&
+      users.forEach(item => {
+        if (item.email === inputEmail.value) {
+          isError = true
+        }
+      })
+    if (isError) {
+      notification.innerText = 'User with this email exists'
+      notification.style.color = 'red'
+    } else {
+      const userData = {
+        name: inputName.value,
+        phoneNumbers: inputPhone.value,
+        email: inputEmail.value,
+        password: inputPassword.value,
+      }
+      users.push(userData)
+      localStorage.setItem('users', JSON.stringify(users))
+      inputName.value = ''
+      inputPhone.value = ''
+      inputEmail.value = ''
+      inputPassword.value = ''
 
-    notification.innerText = 'You were successfully signup'
-    notification.style.color = 'green'
+      notification.innerText = 'You were successfully signup'
+      notification.style.color = 'green'
+    }
   } else {
     notification.innerText = 'Error incorrect value(s)'
     notification.style.color = 'red'
