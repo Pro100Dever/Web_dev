@@ -60,7 +60,6 @@ signupBtn.addEventListener('click', () => {
     notification.innerText = 'Error incorrect value(s)'
     notification.style.color = 'red'
   }
-
   document.body.appendChild(notification)
 })
 
@@ -135,7 +134,7 @@ function chekEmailValidation() {
 function chekPhonValidation() {
   checkPhone.innerText = ''
   checkPhone.style.color = 'red'
-  const re = /[0-9+]+/
+  const re = /[0-9]+/
   if (inputPhone.value[0] !== '+') {
     checkPhone.innerText = 'Должен начинаться c "+"'
   } else if (inputPhone.value.length > 12) {
