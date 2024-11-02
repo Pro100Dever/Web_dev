@@ -20,17 +20,15 @@ form.addEventListener('submit', e => {
   }
   const emailValue = e.target['email'].value
   const passwordValue = e.target['password'].value
-  // записывает в переменную масив обьектов узерс из локал стораге. Если там ничего нет то достает пустой массив
+
   const existingUsers = localStorage.getItem('users')
     ? JSON.parse(localStorage.getItem('users'))
     : []
-  // Проверка находится ли в локал стораге, введеная в импуте почта
+
   const userExist = existingUsers.some(user => user.email === emailValue)
-  // Валидация
   const chekEmailValid = chekEmailValidation(e.target['email'])
   const chekPassValid = chekPasswordValidation(e.target['password'])
 
-  //Проверка существует ли такой пользователь. Если нет то создает объек пользователя и отправляет в локал стораге
   if (userExist) {
     showMassage('User exists', 'red')
   } else if (chekEmailValid && chekPassValid) {
@@ -41,7 +39,9 @@ form.addEventListener('submit', e => {
     }
     existingUsers.push(newUser)
     localStorage.setItem('users', JSON.stringify(existingUsers))
+
     e.target.reset()
+
     form.style.display = 'none'
     loginForm.style.display = 'flex'
     title.textContent = 'You have registered'
@@ -61,9 +61,7 @@ loginForm.addEventListener('submit', e => {
     ? JSON.parse(localStorage.getItem('users'))
     : []
 
-  // запишет в переменную объект пользователя если будет сопадения по почте
   const user = existingUsers.find(user => user.email === emailValue)
-  // Проверка на логин и пароль. Если все ок, то авторизация успешна
   if (user && user.password === passwordValue) {
     const text = document.querySelector('.text')
     text.style.display = 'none'
@@ -73,7 +71,7 @@ loginForm.addEventListener('submit', e => {
     loginForm.style.display = 'none'
 
     renderTasks()
-    title.textContent = 'You are logged'
+    title.textContent = 'You are logged in'
   } else {
     showMassageLogin('Invalid email or password', 'red')
   }
@@ -81,33 +79,30 @@ loginForm.addEventListener('submit', e => {
 
 postForm.addEventListener('submit', e => {
   e.preventDefault()
-  let todos = localStorage.getItem('users')
-    ? JSON.parse(localStorage.getItem('users'))
-    : []
+  let todos = JSON.parse(localStorage.getItem('users')) || []
   const loggedEmail = localStorage.getItem('loggedInUser')
 
   const titleValue = e.target['title'].value
   const descripValue = e.target['description'].value
   const newTask = { title: titleValue, description: descripValue }
 
-  const loggedUser = todos.filter(a => a.email === loggedEmail)
-  for (let item of loggedUser) {
-    item.userTasks.push(newTask)
+  const userIndex = todos.findIndex(user => user.email === loggedEmail)
+  if (userIndex !== -1) {
+    todos[userIndex].userTasks.push(newTask)
+    localStorage.setItem('users', JSON.stringify(todos))
+    renderTasks()
+    e.target.reset()
   }
-
-  localStorage.setItem('users', JSON.stringify(loggedUser))
-  renderTasks()
-  e.target.reset()
 })
 
 function renderTasks() {
   container.innerHTML = ''
   let todos = JSON.parse(localStorage.getItem('users')) || []
   const loggedEmail = localStorage.getItem('loggedInUser')
-  const loggedUser = todos.filter(a => a.email === loggedEmail)
+  const loggedUser = todos.find(user => user.email === loggedEmail)
 
-  for (let item of loggedUser) {
-    item.userTasks.forEach(task => {
+  if (loggedUser) {
+    loggedUser.userTasks.forEach(task => {
       const list = document.createElement('dl')
       const listTitle = document.createElement('dt')
       const listDescription = document.createElement('dd')
@@ -119,45 +114,45 @@ function renderTasks() {
     })
   }
 }
-// Выводит сообщение вконце формы
+// Вывод сообщения в конце формы
 function showMassage(string, color) {
   signupMessage.innerText = string
   signupMessage.style.color = color
   form.insertAdjacentElement('beforeend', signupMessage)
 }
 
-// Выводит сообщение об авторизации
+// Вывод сообщения об авторизации
 function showMassageLogin(string, color) {
   loginMessage.innerText = string
   loginMessage.style.color = color
   loginForm.insertAdjacentElement('beforeend', loginMessage)
 }
 
-//=======================EMAIL
+// Валидация EMAIL
 function chekEmailValidation(email) {
-  email.insertAdjacentElement('afterend', emailValidMessage)
   emailValidMessage.innerText = ''
   emailValidMessage.style.color = 'red'
+  email.insertAdjacentElement('afterend', emailValidMessage)
   const re = /^(?=.*[A-Za-z])(?=.*@)[A-Za-z0-9@]+$/
   if (email.value.length < 5) {
-    emailValidMessage.innerText = 'Должно быть минимум 5 сиволов'
+    emailValidMessage.innerText = 'Должно быть минимум 5 символов'
   } else if (!email.value.includes('@')) {
     emailValidMessage.innerText = 'Должен быть символ "@"'
   } else if (!email.value.match(re)) {
     emailValidMessage.innerText =
-      'Имя должно быть только латинские буквы и цифры и хотя бы одна буква'
+      'Имя должно содержать только латинские буквы и цифры, и хотя бы одну букву'
   } else {
     return true
   }
 }
 
-//=======================PASSWORD
+// Валидация PASSWORD
 function chekPasswordValidation(password) {
-  password.insertAdjacentElement('afterend', passValidMessage)
   passValidMessage.innerText = ''
   passValidMessage.style.color = 'red'
+  password.insertAdjacentElement('afterend', passValidMessage)
   if (password.value.length > 26) {
-    passValidMessage.innerText = 'Должен быть не больше 12 символов'
+    passValidMessage.innerText = 'Должен быть не больше 26 символов'
   } else if (password.value.length < 8) {
     passValidMessage.innerText = 'Должен быть минимум 8 символов'
   } else {
