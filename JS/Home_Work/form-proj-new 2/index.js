@@ -9,29 +9,25 @@ const title = document.querySelector('.signup__title')
 
 const emailValidMessage = document.createElement('span')
 const passValidMessage = document.createElement('span')
-
+const changebtn = document.getElementById('loginLink')
 // Регистрация
 form.addEventListener('submit', e => {
   e.preventDefault()
-  if (e.target['loginLink']) {
-    form.style.display = 'none'
-    loginForm.style.display = 'flex'
-    title.textContent = 'Sign in'
-  }
   const emailValue = e.target['email'].value
   const passwordValue = e.target['password'].value
 
   const existingUsers = localStorage.getItem('users')
     ? JSON.parse(localStorage.getItem('users'))
     : []
-
   const userExist = existingUsers.some(user => user.email === emailValue)
+
   const chekEmailValid = chekEmailValidation(e.target['email'])
   const chekPassValid = chekPasswordValidation(e.target['password'])
 
   if (userExist) {
     showMassage('User exists', 'red')
   } else if (chekEmailValid && chekPassValid) {
+    // Добавляем нового пользователя в массив и сохраняем в Local Storage
     const newUser = {
       email: emailValue,
       password: passwordValue,
@@ -41,6 +37,7 @@ form.addEventListener('submit', e => {
     localStorage.setItem('users', JSON.stringify(existingUsers))
 
     e.target.reset()
+    showMassage('You have registered successfully!', 'green')
 
     form.style.display = 'none'
     loginForm.style.display = 'flex'
@@ -50,7 +47,11 @@ form.addEventListener('submit', e => {
     showMassage('Incorrect value(s)', 'red')
   }
 })
-
+changebtn.addEventListener('click', () => {
+  form.style.display = 'none'
+  loginForm.style.display = 'flex'
+  title.textContent = 'Sign in'
+})
 // Авторизация
 loginForm.addEventListener('submit', e => {
   e.preventDefault()
