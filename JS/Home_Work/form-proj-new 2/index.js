@@ -1,15 +1,39 @@
 const form = document.querySelector('.form')
 const loginForm = document.getElementById('login-form')
-const postForm = document.querySelector('.post-form')
+const postForm = document.getElementById('post-form')
 const container = document.getElementById('container')
 
 const signupMessage = document.createElement('div')
 const loginMessage = document.createElement('div')
 const title = document.querySelector('.signup__title')
+const text = document.querySelector('.text')
 
 const emailValidMessage = document.createElement('span')
 const passValidMessage = document.createElement('span')
+
 const changebtn = document.getElementById('loginLink')
+const logoutBtn = document.getElementById('logout-button')
+
+// Проверка. Была ли авторизация раньше
+document.addEventListener('DOMContentLoaded', () => {
+  const existingUsers = localStorage.getItem('users')
+    ? JSON.parse(localStorage.getItem('users'))
+    : []
+  const emailValue = localStorage.getItem('users')
+    ? localStorage.getItem('loggedInUser')
+    : []
+  const userExist = existingUsers.some(user => user.email === emailValue)
+  if (userExist) {
+    form.style.display = 'none'
+    loginForm.style.display = 'none'
+    text.style.display = 'none'
+
+    postForm.style.display = 'block'
+    container.style.display = 'flex'
+    logoutBtn.style.display = 'unset'
+    renderTasks()
+  }
+})
 // Регистрация
 form.addEventListener('submit', e => {
   e.preventDefault()
@@ -47,6 +71,7 @@ form.addEventListener('submit', e => {
     showMassage('Incorrect value(s)', 'red')
   }
 })
+// переход на вход
 changebtn.addEventListener('click', () => {
   form.style.display = 'none'
   loginForm.style.display = 'flex'
@@ -64,20 +89,29 @@ loginForm.addEventListener('submit', e => {
 
   const user = existingUsers.find(user => user.email === emailValue)
   if (user && user.password === passwordValue) {
-    const text = document.querySelector('.text')
-    text.style.display = 'none'
     localStorage.setItem('loggedInUser', emailValue)
 
-    postForm.style.display = 'block'
+    text.style.display = 'none'
     loginForm.style.display = 'none'
-
+    logoutBtn.style.display = 'unset'
+    postForm.style.display = 'block'
+    container.style.display = 'flex'
     renderTasks()
     title.textContent = 'You are logged in'
   } else {
     showMassageLogin('Invalid email or password', 'red')
   }
 })
-
+// Logout
+logoutBtn.addEventListener('click', () => {
+  form.style.display = 'flex'
+  text.style.display = 'unset'
+  postForm.style.display = 'none'
+  container.style.display = 'none'
+  logoutBtn.style.display = 'none'
+  localStorage.removeItem('loggedInUser')
+})
+// добавление таскс
 postForm.addEventListener('submit', e => {
   e.preventDefault()
   let todos = JSON.parse(localStorage.getItem('users')) || []
@@ -91,6 +125,7 @@ postForm.addEventListener('submit', e => {
   if (userIndex !== -1) {
     todos[userIndex].userTasks.push(newTask)
     localStorage.setItem('users', JSON.stringify(todos))
+    container.style.display = 'flex'
     renderTasks()
     e.target.reset()
   }
