@@ -101,7 +101,6 @@ loginBtn.addEventListener('click', () => {
 })
 
 //====================NAME
-
 function chekNameValidation() {
   checkName.innerText = ''
   checkName.style.color = 'red'
