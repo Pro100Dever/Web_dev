@@ -31,6 +31,4 @@ fetch('https://jsonplaceholder.typicode.com/todos', {
 //   .then(data => console.log(data.map(item => item.id)))
 fetch('https://jsonplaceholder.typicode.com/todos')
   .then(res => res.json())
-  .then(data => {
-    return data.map(item => console.log(item.id))
-  })
+  .then(data => data.map(item => console.log(item.id)))
