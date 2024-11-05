@@ -25,7 +25,6 @@ fetch('https://jsonplaceholder.typicode.com/todos', {
   .then(res => res.json())
   .then(res => console.log(res))
  */
-
 // fetch('https://jsonplaceholder.typicode.com/todos')
 //   .then(res => res.json())
 //   .then(data => console.log(data.map(item => item.id)))
