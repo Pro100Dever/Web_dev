@@ -61,8 +61,8 @@ formData.addEventListener('submit', e => {
   console.log(name, lastName, mail)
 })
 closeModal.addEventListener('click', () => {
-  const ul = document.querySelector('.list')
-  const li = document.querySelector('.item')
+  // const ul = document.querySelector('.list')
+  // const li = document.querySelector('.item')
   modal.style.display = 'none'
   modalContent.innerHTML = ''
 })
