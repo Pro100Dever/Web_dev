@@ -18,9 +18,7 @@ const fetchTodos = async () => {
     return []
   }
 }
-
 fetchTodos()
-console.log(counter)
 
 const renderTodos = async () => {
   const todos = await fetchTodos()
@@ -29,6 +27,18 @@ const renderTodos = async () => {
     const element = createTodoElement(todo)
     container.append(element)
   })
+
+  const removeBtn = document.querySelector('.remove-btn')
+  const getBtn = document.querySelector('.getAllBtn')
+  const form = document.getElementById('form')
+
+  removeBtn.style.display = 'block'
+  getBtn.style.display = 'none'
+  form.append(removeBtn)
+}
+
+function removeRemoveBtn(el) {
+  el.remove()
 }
 
 const createTodoElement = todo => {
