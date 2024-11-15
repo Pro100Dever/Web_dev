@@ -139,4 +139,38 @@ async function fetchApiToDos(url, status, limit) {
     console.log(error)
   }
 }
-fetchApiToDos(urlsObj, false, 10)
+// fetchApiToDos(urlsObj, false, 10)
+const div = document.createElement('div')
+const names = ['Buddy', 'Bella', 'Charlie', 'Max', 'Luna']
+
+async function fetchDogs(dogNames) {
+  try {
+    const url = 'https://dog.ceo/api/breeds/image/random'
+    const response = await fetch(url)
+
+    if (!response) {
+      throw new Error('Bad request')
+    }
+
+    const dog = response.json()
+    createDogEl(await dog, dogNames)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+function createDogEl(dog, dogName) {
+  div.innerHTML = ''
+
+  const index = Math.ceil(Math.random() * 10)
+  console.log(index)
+  const h3 = document.createElement('h3')
+  const img = document.createElement('img')
+
+  h3.innerText = dogName[index - 1]
+  img.setAttribute('src', dog.message)
+
+  div.append(h3, img)
+  document.body.append(div)
+}
+fetchDogs(names)

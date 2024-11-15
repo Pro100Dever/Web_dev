@@ -1,7 +1,7 @@
 const createForm = document.querySelector('#create-form')
 const modalForm = document.querySelector('.modal-form')
 const openModalForm = document.querySelector('.float-button')
-const closeModal = document.querySelector('.closeBtn')
+const searchInput = document.querySelector('.search-field__input')
 
 //достаем из ЛХ массив туду
 const getTodos = () => {
@@ -44,8 +44,12 @@ const createTodo = e => {
   renderTodos()
 }
 
+searchInput.addEventListener('input', e => {
+  renderTodos(null, e.target.value)
+})
+
 // функция отобржания задачи в спике дел
-const renderTodos = filterType => {
+const renderTodos = (filterType, searchText) => {
   const localStorageTodos = getTodos()
   if (localStorageTodos && Array.isArray(localStorageTodos)) {
     const container = document.querySelector('#todo-list')
@@ -53,17 +57,20 @@ const renderTodos = filterType => {
     container.innerHTML = ''
 
     const filterTodos = localStorageTodos.filter(todo => {
-      if (filterType == 'filter-active') {
+      if (filterType === 'filter-active') {
         return !todo.done
       }
-      if (filterType == 'filter-done') {
+      if (filterType === 'filter-done') {
         return todo.done
       }
       return true
     })
 
+    const filterTodoItem = searchText
+      ? filterTodos.filter(todo => todo.description.includes(searchText))
+      : filterTodos
     //проходимся по массиву задач
-    filterTodos.forEach(todo => {
+    filterTodoItem.forEach(todo => {
       //обработка времени из поля даты
       const startDate = new Date(todo.startDate).toLocaleString('en-EN', {
         day: 'numeric',
@@ -153,6 +160,7 @@ const toggleTodoDone = id => {
   }
   const buttonActive = document.querySelector('split-button__button--active')
   console.log(buttonActive.id)
+
   renderTodos()
 }
 
