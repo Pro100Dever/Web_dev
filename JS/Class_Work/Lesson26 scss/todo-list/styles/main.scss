@@ -1,0 +1,273 @@
+@use './variable' as style;
+@use './reset';
+@use './mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.main-header {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.header-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+
+  &__sub-header {
+    font-size: 15px;
+  }
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  width: 100%;
+  height: 48px;
+  border-radius: 28px;
+  background-color: rgba(103, 80, 164, 0.05);
+  padding: 0 16px;
+  margin-bottom: 16px;
+
+  &__input {
+    @include mixins.none;
+    height: 100%;
+    width: 100%;
+    background: none;
+    appearance: none;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__icon {
+    color: #49454f;
+  }
+}
+
+.float-button {
+  @include mixins.none;
+  @include mixins.flex;
+  position: fixed;
+  background-color: rgba(235, 222, 247, 1);
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  width: 56px;
+  height: 56px;
+  right: 16px;
+  bottom: 16px;
+  border-radius: 16px;
+  cursor: pointer;
+
+  & span {
+    color: #1f182a;
+  }
+}
+
+.split-button {
+  width: 100%;
+  height: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid #79747e;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 16px;
+
+  &__button {
+    @include mixins.none;
+    @include mixins.flex;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.15s linear;
+    padding: 10px 12px;
+    gap: 8px;
+
+    &-icon {
+      width: 0;
+      overflow: hidden;
+      transition: all 0.15s linear;
+      color: #381e72 !important;
+      font-size: 18px !important;
+    }
+    &--center {
+      border-left: 1px solid #79747e;
+      border-right: 1px solid #79747e;
+    }
+
+    &--active {
+      background-color: rgba(232, 222, 248, 1);
+    }
+
+    &--active &-icon {
+      width: 18px;
+    }
+  }
+}
+
+.checkbox {
+  @include mixins.flex;
+  position: relative;
+  width: 34px;
+  height: 34px;
+  flex-direction: column;
+
+  & input[type='checkbox'] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #49454f;
+    border-radius: 2px;
+    transition: all 0.15s linear;
+    cursor: pointer;
+  }
+  & input[type='checkbox']:checked {
+    background-color: rgba(232, 222, 248, 1);
+    border-color: rgba(232, 222, 248, 1);
+  }
+
+  &:has(input[type='checkbox']:checked) .checkbox__check-icon {
+    opacity: 100%;
+  }
+
+  &__check-icon {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    pointer-events: none;
+    font-size: 20px !important;
+    color: #381e72;
+    transition: all 0.15s linear;
+    opacity: 0%;
+  }
+}
+
+.todo {
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  &-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px 8px 8px;
+    background-color: rgba(103, 80, 164, 0.05);
+    border-radius: 16px;
+    min-height: 62px;
+
+    & span {
+      margin-left: auto;
+      cursor: pointer;
+    }
+
+    &:has(input[type='checkbox']:checked) > &__data {
+      text-decoration: line-through;
+      color: rgba(29, 27, 30, 0.5) !important;
+    }
+
+    &__data {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &__date {
+      font-size: 14px;
+      color: inherit;
+    }
+
+    &__title {
+      font-size: 16px;
+      font-weight: 400;
+      color: inherit;
+    }
+  }
+}
+
+.modal-form {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.closeBtn {
+  width: fit-content;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px 16px 0 0;
+  background-color: rgba(247, 242, 250, 1);
+
+  &__input {
+    height: 56px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid #79747e;
+    border-radius: 4px;
+    background: none;
+    outline: none;
+    transition: all 0.15s linear;
+    padding: 4px 16px;
+
+    &:focus {
+      border: 1px solid #6750a4;
+    }
+  }
+}
+
+.form-button {
+  height: 40px;
+  width: fit-content;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  @include mixins.none;
+  border-radius: 20px;
+  cursor: pointer;
+
+  &--primary {
+    color: #ffffff;
+    background-color: #6750a4;
+    border: 1px solid #6750a4;
+  }
+
+  &--secondary {
+    color: #6750a4;
+    background-color: #ffffff;
+    border: 1px solid #6750a4;
+  }
+}
+.form__buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.decor {
+  width: 150px;
+  height: 3px;
+  margin: 0 auto 5px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}

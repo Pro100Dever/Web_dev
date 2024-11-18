@@ -1,0 +1,37 @@
+@mixin header-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flipContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+@mixin ICard {
+  padding: 16px;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: 10px 10px 50px -36px rgba(0, 0, 0, 0.75);
+}
+
+%inline-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%btn {
+  width: 240px;
+  height: 48px;
+  border-radius: 8px;
+  box-shadow: inset;
+}
+%btn2 {
+  @extend %btn;
+  display: flex;
+  background: teal;
+  overflow: hidden;
+}
