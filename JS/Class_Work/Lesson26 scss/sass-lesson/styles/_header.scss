@@ -1,9 +1,9 @@
-@use './variable';
+@use './variable' as style;
 @use './mixins';
 
 .header {
   // @extend %inline-type;
-  gap: 80px;
-  // gap: $gap-b;
+  // gap: 80px;
+  gap: style.$gap-b;
   @include mixins.header-flex;
 }
