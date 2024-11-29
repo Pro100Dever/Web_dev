@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 71px;
+  padding: 96px 227px;
+}
+ul {
+  list-style: none;
+  margin-top: 8px;
+}
+.userItem {
+  border: 1px solid black;
+  padding: 13px 21px;
+}
+
+.userPhoto img {
+  width: 100%;
+}
+
+.text {
+  margin-top: 24px;
+}
+
+.text span {
+  border-bottom: 1px solid black;
+  margin-right: 24px;
+  line-height: 2;
+  padding-bottom: 7px;
+  height: fit-content;
+}
+
+.userAddress {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.text .line {
+  padding-bottom: 0;
+}
+
+.catImg {
+  max-width: 900px;
+  max-height: 700px;
+}
+
+.cat {
+  max-width: 900px;
+  margin: 70px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.cat p span {
+  font-weight: bold;
+}
