@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: lightblue;
+  border-radius: 20px;
+  padding: 16px;
+  margin: 20px;
+  font-size: 18px;
+  color: #222222;
+}
+.subheader {
+  font-size: 30px;
+}
