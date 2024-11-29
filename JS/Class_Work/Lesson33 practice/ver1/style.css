@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 200px;
+}
+.display-btn {
+  padding: 25px 40px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: transparent;
+  margin: 40px auto;
+  font-size: 32px;
+}
+
+.form {
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 20px 60px 78px;
+  text-align: center;
+  display: none;
+}
+.form-container {
+  display: flex;
+  gap: 77px;
+  margin-top: 27px;
+}
+
+form h3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+}
+
+img {
+    max-width: 350px;
+    border-radius: 8px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  max-width: 200px;
+  text-align: start;
+}
+.right button {
+  border: 1px solid #000000;
+  padding: 12px;
+  background: transparent;
+  margin: 0 auto;
+  width: 135px;
+}
+.subForm {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+.subForm input {
+  margin-bottom: 7px;
+  padding: 10px;
+}
+.subForm label {
+  margin: 0 0 2px 5px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12.1px;
+}
