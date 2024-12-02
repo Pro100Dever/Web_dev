@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="left-block">
+        <figure class="left-block__circle"></figure>
+        <h1>Rorry the pop</h1>
+      </div>
+      <nav class="right-block">
+        <ul class="right-block__list">
+          <li><a href="./">Blog</a></li>
+          <li><a href="./">About me</a></li>
+          <li><a href="./">Store</a></li>
+          <li><a href="./">Creaters</a></li>
+          <li><a href="./">Authorization</a></li>
+        </ul>
+      </nav>
+    </header>
+    <button class="open__modal">Modal</button>
+    <!-- 1. создание контейнера для модального окна -->
+    <div class="modal">
+      <!-- 2. Само содержимое модального окна -->
+      <div class="modal__content">
+        <h3 class="modal-content__title">Posts</h3>
+        <form class="modal-content__form">
+          <input
+            id="modal-content__form-title"
+            type="text"
+            placeholder="Title"
+          />
+          <input
+            id="modal-content__form-description"
+            type="text"
+            placeholder="Description"
+          />
+          <button class="form__create-btn">Create</button>
+        </form>
+        <ul class="modal-content__fetch-list">
+          <li class="list__item">
+            <div class="list-item__left-block">
+              <h3 class="list-item__title">title: ‘first’</h3>
+              <p class="list-item__description">description: ‘first’</p>
+            </div>
+            <div class="list-item__right-block">
+              <img src="./post-icon.png" alt="post-icon" />
+            </div>
+          </li>
+        </ul>
+        <button class="modal-content__render-btn">Render</button>
+        <ul class="modal-content__create-list">
+          <li class="list__item">
+            <div class="list-item__left-block">
+              <h3 class="list-item__title">title: ‘first’</h3>
+              <p class="list-item__description">description: ‘first’</p>
+            </div>
+            <div class="list-item__right-block">
+              <img src="./post-icon.png" alt="post-icon" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Модальное окно через dialog -->
+    <!-- <button id="openDialogModal">Open dialog modal</button>
+
+    <dialog class="dialog__modal">
+      <img src="./close.svg" alt="close" id="closeDialog" />
+      <div class="modal-header">Модальное окно</div>
+    </dialog> -->
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
