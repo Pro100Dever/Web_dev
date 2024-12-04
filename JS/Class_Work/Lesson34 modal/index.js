@@ -62,8 +62,10 @@ async function fetcPost() {
 }
 
 function renderPost(posts) {
+  const fetchList = document.querySelector('.modal-content__fetch-list')
+  fetchList.innerHTML = ''
+
   posts.forEach(element => {
-    const fetchList = document.querySelector('.modal-content__fetch-list')
     const listItem = document.createElement('li')
 
     listItem.className = 'list__item'
