@@ -54,7 +54,6 @@ async function fetcPost() {
       throw new Error('Bad request')
     }
     const data = await response.json()
-    console.log(data)
     renderPost(data)
   } catch (error) {
     console.log(error)
@@ -85,3 +84,47 @@ function renderPost(posts) {
 renderBtn.addEventListener('click', () => {
   fetcPost()
 })
+
+////////////////////////////////Задачки
+const company = {
+  name: 'TechCorp',
+  employees: [
+    { name: 'Alice', position: 'Developer', salary: 80000 },
+    { name: 'Bob', position: 'Manager', salary: 90000 },
+    { name: 'Charlie', position: 'Designer', salary: 70000 },
+  ],
+}
+
+function setProcent(arr) {
+  arr.forEach(e => {
+    e.salary += (e.salary / 100) * 10
+  })
+}
+function getSum(arr) {
+  const res = arr.reduce((acc, e) => acc + e.salary, 0)
+  return res
+}
+function setArbeit(arr) {
+  arr.push({ name: 'Diana', position: 'QA Engineer', salary: 75000 })
+}
+function getArbeit(arr) {
+  arr.filter(a => {
+    a.salary > 80000
+    console.log(a)
+  })
+}
+setProcent(company.employees)
+console.log(getSum(company.employees))
+
+console.log(company.employees)
+
+setArbeit(company.employees)
+getArbeit(company.employees)
+console.log(company.employees)
+
+// Задания:
+// Увеличьте зарплату каждого сотрудника на 10%.
+// Найдите сумму зарплат всех сотрудников.
+// Добавьте нового сотрудника: { name: "Diana", position: "QA Engineer", salary: 75000 }.
+// Отдельно вытащить всех сотрудников чья зарплата больше 80000
+// Посчитать общие расходы на компании на затраты сотрудников
