@@ -25,34 +25,44 @@
         <h3>Posts</h3>
       </div>
     </nav>
-    <!--     <div class="about-container">
-      <div><h5>About</h5></div>
-    </div>
-    <div class="post-container">
-      <div><h5>Cat's</h5></div>
-    </div> -->
-    <div class="container" id="posts-container">
-      <div class="container__title">Posts</div>
+    <div class="container" id="about-container">
+      <div class="container__title">About</div>
       <div class="container__content">
-        <h3>
-          "sunt aut facere repellat provident occaecati excepturi optio
-          reprehenderit"
+        <h3 class="container-content__title">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, porro?
         </h3>
-        <p>
-          quia et suscipit\nsuscipit recusandae consequuntur expedita et
-          cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem
-          sunt rem eveniet architecto
+        <p class="container-content__description">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+          quae omnis deleniti delectus nobis rem sint optio nesciunt maiores
+          tempora asperiores, fugiat ipsa quam earum est cupiditate reiciendis
+          deserunt quasi?
         </p>
       </div>
+    </div>
+    <div class="container" id="cats-container">
+      <div class="container__title">Cat's</div>
       <div class="toogle">
-        <button class="left-toogle">
-          <img src="./icon/arrow_left.svg" alt="" />
+        <button class="left-toogle left-toogle--cats">
+          <img src="./icon/arrow_left.svg" alt="arrow" />
         </button>
-        <button class="right-toogle">
-          <img src="./icon/arrow_right.svg" alt="" />
+        <button class="right-toogle right-toogle--cats">
+          <img src="./icon/arrow_right.svg" alt="arrow" />
         </button>
       </div>
     </div>
+    <div class="container" id="posts-container">
+      <div class="container__title container__title">Posts</div>
+      <div class="toogle">
+        <button class="left-toogle left-toogle--post">
+          <img src="./icon/arrow_left.svg" alt="arrow" />
+        </button>
+        <button class="right-toogle right-toogle--post">
+          <img src="./icon/arrow_right.svg" alt="arrow" />
+        </button>
+      </div>
+    </div>
+
+    <div class="notifications"></div>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

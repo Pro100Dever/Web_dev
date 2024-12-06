@@ -68,17 +68,21 @@ body {
 .container__content {
   margin: 35px 0 0 10px;
 }
-.container h3 {
+.container-content__title {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.78px;
   margin-bottom: 35px;
 }
-.container p {
+.container-content__description {
   color: rgba(255, 255, 255, 0.8235294118);
   font-size: 14px;
   font-weight: 400;
   line-height: 16.94px;
+}
+.container-content__description--cats {
+  display: block;
+  text-align: center;
 }
 
 .toogle {
@@ -95,8 +99,56 @@ body {
   cursor: pointer;
 }
 
-#posts-container {
+.image-block {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.image-block img {
+  width: 100%;
+}
+
+#about-container p {
+  margin-bottom: 20px;
+}
+
+#posts-container,
+#cats-container,
+#about-container {
   display: none;
+}
+
+.notifications {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.notification {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px;
+  color: rgba(255, 255, 255, 0.678);
+}
+.notification--success {
+  background: rgba(34, 139, 34, 0.5215686275);
+}
+.notification--error {
+  background: rgba(139, 34, 34, 0.5215686275);
+}
+.notification__data {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.notification__icon {
+  margin: auto 0;
+}
+.notification__close:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

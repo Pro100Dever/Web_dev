@@ -55,19 +55,25 @@ body {
   &__content {
     margin: 35px 0 0 10px;
   }
+  &-content {
+    &__title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 21.78px;
+      margin-bottom: 35px;
+    }
 
-  & h3 {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 21.78px;
-    margin-bottom: 35px;
-  }
+    &__description {
+      color: #ffffffd2;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.94px;
 
-  & p {
-    color: #ffffffd2;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.94px;
+      &--cats {
+        display: block;
+        text-align: center;
+      }
+    }
   }
 }
 .toogle {
@@ -83,6 +89,54 @@ body {
     }
   }
 }
-#posts-container {
+.image-block {
+  max-width: 300px;
+  margin: 0 auto;
+  & img {
+    width: 100%;
+  }
+}
+
+#about-container p {
+  margin-bottom: 20px;
+}
+#posts-container,
+#cats-container,
+#about-container {
   display: none;
+}
+
+.notifications {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.notification {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px;
+  color: rgba(255, 255, 255, 0.678);
+
+  &--success {
+    background: #228b2285;
+  }
+  &--error {
+    background: #8b222285;
+  }
+
+  &__data {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  &__icon {
+    margin: auto 0;
+  }
+  &__close:hover {
+    cursor: pointer;
+  }
 }
