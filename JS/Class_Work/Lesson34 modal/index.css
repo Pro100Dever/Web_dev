@@ -163,3 +163,9 @@ button:hover {
   -ms-transform: scale(1.1); */
   transform: scale(1.1);
 }
+
+/* .dialog__modal {
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+} */
