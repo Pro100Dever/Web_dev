@@ -7,4 +7,9 @@
 
 body {
   overflow: hidden;
+  &--open {
+    background-color: rgba(0, 0, 0, 0.262745098);
+    width: 100vw;
+    height: 100vh;
+  }
 }

@@ -164,10 +164,7 @@ nav {
   transition: all 0.2s linear;
 
   &--open {
-    position: absolute;
     transform: translateX(45%);
-    background-color: #00000043;
-    height: 100vh;
   }
 
   form {
