@@ -25,18 +25,11 @@ span {
   width: 50%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.384);
 }
-.triggers {
-  margin: 10px 0 0 20%;
-  display: flex;
-  gap: 15px;
-}
-.triggers button {
-  padding: 10px 30px;
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.325);
-  border-radius: 12px;
+button {
   transition: 0.3s all linear;
+  background: transparent;
+  border: none;
 }
-.triggers button:hover {
+button:hover {
   transform: scale(1.1);
 }
