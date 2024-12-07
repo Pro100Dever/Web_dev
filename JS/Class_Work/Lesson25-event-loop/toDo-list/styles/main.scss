@@ -70,8 +70,6 @@ body {
 .remove-btn {
   display: none;
   border: none;
-  height: 100%;
-  width: auto;
   aspect-ratio: 1 / 1;
   @extend %flex;
   border-radius: 8px;
@@ -81,7 +79,6 @@ body {
   border: none;
   background: white;
   padding: 5px;
-  height: 100%;
   @extend %flex;
   border-radius: 8px;
 }
