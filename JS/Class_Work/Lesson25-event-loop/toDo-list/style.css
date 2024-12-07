@@ -4,14 +4,17 @@
   box-sizing: border-box;
 }
 
-.getAllBtn, .remove-btn, body .form__button, body {
+.getAllBtn,
+.remove-btn,
+body .form__button,
+body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 body {
-  font-family: "Playwrite GB S", cursive;
+  font-family: 'Playwrite GB S', cursive;
   height: 100%;
   border-color: darkslateblue;
   color: azure;
@@ -65,8 +68,6 @@ body .form__button {
 .remove-btn {
   display: none;
   border: none;
-  height: 100%;
-  width: auto;
   aspect-ratio: 1/1;
   border-radius: 8px;
   padding: 5px;
@@ -76,7 +77,6 @@ body .form__button {
   border: none;
   background: white;
   padding: 5px;
-  height: 100%;
   border-radius: 8px;
 }
 

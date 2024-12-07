@@ -1,3 +1,5 @@
+const getBtn = document.querySelector('.getAllBtn')
+const container = document.getElementById('container')
 let counter = 0
 
 const fetchTodos = async () => {
@@ -22,14 +24,12 @@ fetchTodos()
 
 const renderTodos = async () => {
   const todos = await fetchTodos()
-  const container = document.getElementById('container')
   todos.map(todo => {
     const element = createTodoElement(todo)
     container.append(element)
   })
 
   const removeBtn = document.querySelector('.remove-btn')
-  const getBtn = document.querySelector('.getAllBtn')
   const form = document.getElementById('form')
 
   removeBtn.style.display = 'block'
@@ -38,7 +38,10 @@ const renderTodos = async () => {
 }
 
 function removeRemoveBtn(el) {
-  el.remove()
+  el.style.display = 'none'
+  const todoList = container.querySelectorAll('.todo')
+  todoList.forEach(e => e.remove())
+  getBtn.style.display = 'block'
 }
 
 const createTodoElement = todo => {
