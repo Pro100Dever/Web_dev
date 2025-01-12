@@ -1,0 +1,17 @@
+$color: #333;
+$secondary-color: white;
+
+$padding: 24px;
+
+.container {
+  font-family: sans-serif;
+  background-color: black;
+  color: $secondary-color;
+
+  .footer,
+  .header {
+    background-color: $secondary-color;
+    padding: $padding;
+    color: black;
+  }
+}
