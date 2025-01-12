@@ -1,0 +1,19 @@
+.rating__img {
+  width: 1000px;
+  height: 300px;
+  object-fit: contain;
+}
+.btn__container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+  }
+  button:hover {
+    background: #e3e3e3;
+    color: black;
+  }
+}
