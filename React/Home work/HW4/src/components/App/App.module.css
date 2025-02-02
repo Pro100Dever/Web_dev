@@ -1,0 +1,11 @@
+.city__section {
+  width: 99%;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: greenyellow;
+  border: 3px solid lawngreen;
+  color: darkgreen;
+}
