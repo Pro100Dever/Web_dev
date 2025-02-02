@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import styles from './UserProfile.module.css'
 
 export default function UserProfile() {
   const [loading, setLoading] = useState(false)
@@ -19,7 +20,7 @@ export default function UserProfile() {
   }
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div className={styles.load}>Loading...</div>
   }
 
   async function fetchUser() {
@@ -38,14 +39,16 @@ export default function UserProfile() {
   }
 
   return (
-    <div>
-      <img src={user} alt='icon' />
+    <div className={styles.container}>
+      <img src={user} alt='icon' className={styles.image} />
 
       <h3>{user.name}</h3>
       <p>Email: {user.email}</p>
       <p>Phone: {user.phone}</p>
 
-      <button onClick={handleClick}>Load new user</button>
+      <button onClick={handleClick} className={styles.btn}>
+        Load new user
+      </button>
     </div>
   )
 }
