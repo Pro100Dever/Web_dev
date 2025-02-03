@@ -1,0 +1,47 @@
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 112px;
+}
+
+.title {
+  font-size: 64px;
+  line-height: 76px;
+}
+
+.signIn {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.links {
+  border: 3px solid #1ed760;
+  border-radius: 65px;
+  padding: 36px 57px 41px 57px;
+  max-width: 446px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  gap: 16px;
+}
+
+.chtototam,
+.chtototam svg {
+  transition: transform 0.3s ease-in;
+}
+
+.chtototam:hover {
+  transform: translateY(-5px);
+}
+
+.chtototam svg:hover {
+  transform: translateY(-5px);
+  path {
+    fill: #1181f1;
+  }
+}
