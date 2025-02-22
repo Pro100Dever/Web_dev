@@ -1,0 +1,9 @@
+:root .button {
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #3b3b3a;
+  margin-right: 6px;
+}
+.form {
+  margin-bottom: 10px;
+}

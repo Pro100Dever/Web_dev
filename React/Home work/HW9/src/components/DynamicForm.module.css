@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+:root .inputName {
+  margin-bottom: 5px;
+}
+.inputErrors {
+  color: red;
+  font-weight: bold;
+}
+.button {
+  margin-top: 10px;
+}
