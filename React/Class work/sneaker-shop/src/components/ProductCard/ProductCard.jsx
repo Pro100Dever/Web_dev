@@ -1,18 +1,10 @@
-import { useContext } from 'react'
-import { CartContext } from '../../context/CartContext'
-import {
-  Actions,
-  AddButton,
-  Amount,
-  Card,
-  Image,
-  Price,
-  Title,
-} from './ProductCard.styles.js'
+import { useContext } from 'react';
+import { Card, Image, Title, Actions, Price, Amount, AddButton } from './ProductCard.styles.js';
+import { CartContext } from '../../context/CartContext';
 
 export default function ProductCard({ product }) {
-  const { image, name, price } = product
-  const { addToCart } = useContext(CartContext)
+  const { image, name, price } = product;
+  const { addToCart } = useContext(CartContext);
 
   return (
     <Card>

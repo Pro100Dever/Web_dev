@@ -1,19 +1,23 @@
-import React, { useContext } from 'react'
-import { CartContext } from '../../context/CartContext'
-import CartCard from '../CartCard/CartCard'
+import { useContext } from "react"
+import CartCard from "../CartCard/CartCard"
+import { CartContext } from "../../context/CartContext"
 
 export default function Cart() {
-  const { cartItems } = useContext(CartContext)
+  const {cartItems} = useContext(CartContext);
 
   return (
-    <>
-      {cartItems.length === 0 ? (
-        <h2>Empty</h2>
-      ) : (
-        cartItems.map((item, index) => (
-          <CartCard item={item} key={item.id ? item.id : index} />
-        ))
-      )}
-    </>
+    <div>
+      {cartItems.length === 0
+        ?
+        <p>Cart is empty</p>
+        :
+        (
+          cartItems.map((product) => {
+            return (<CartCard product={product} key={product.id} />)
+            
+          })
+        )
+      }
+    </div>
   )
 }

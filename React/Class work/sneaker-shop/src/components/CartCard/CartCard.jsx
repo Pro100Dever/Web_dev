@@ -1,5 +1,7 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
+import deleteIcon from '../../assets/delete.svg'
 import { CartContext } from '../../context/CartContext'
+
 import {
   Actions,
   AddButton,
@@ -7,28 +9,29 @@ import {
   Card,
   Image,
   Price,
+  PriceContainer,
   Title,
-} from '../ProductCard/ProductCard.styles.js'
+} from './CartCard.styles'
 
-export default function CartCard({ item }) {
-  console.log(item)
-
-  const { image, name, price, id } = item
+export default function CartCard({ product }) {
+  const { image, name, price, id } = product
   const { deleteToCart } = useContext(CartContext)
+  console.log(product)
+  console.log(image, name, price)
 
   return (
-    <>
-      <Card>
+    <Card>
+      <Actions>
         <Image src={image} alt={name} />
         <Title>{name}</Title>
-        <Actions>
-          <div>
-            <Price>PRICE:</Price>
-            <Amount>{price}</Amount>
-          </div>
-          <AddButton onClick={() => deleteToCart(id)}>-</AddButton>
-        </Actions>
-      </Card>
-    </>
+        <PriceContainer>
+          <Price>PRICE:</Price>
+          <Amount>{price}</Amount>
+        </PriceContainer>
+      </Actions>
+      <AddButton onClick={() => deleteToCart(id)}>
+        <img src={deleteIcon} alt='deleteIcon' />
+      </AddButton>
+    </Card>
   )
 }
