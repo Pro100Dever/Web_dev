@@ -1,0 +1,78 @@
+@use './variables' as *;
+@use './breakpoints' as *;
+
+// Home page
+
+@include for-large-up {
+  .nav__logo:hover {
+    animation: headShake;
+    animation-duration: 1s;
+  }
+  .nav__right {
+    overflow: hidden;
+    border-radius: 50px;
+    width: 145px;
+  }
+  .nav__login {
+    width: 140px;
+    & span {
+      position: relative;
+      transition: all 0.35s;
+      z-index: 2;
+    }
+    &:hover {
+      color: $white;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: -1px;
+      width: 0;
+      height: 100%;
+      background: $fiolet;
+      border-radius: 50px;
+      transition: all 0.35s;
+      z-index: 1;
+    }
+    &:hover:before {
+      width: 100%;
+    }
+  }
+  .nav__container_login:hover {
+    .nav__join_desktop {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      animation: pulse;
+      animation-duration: 1s;
+      // animation-iteration-count: infinite;
+    }
+  }
+  .about__right-invite-btn:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    animation: pulse;
+    animation-duration: 1s;
+    // animation-iteration-count: infinite;
+  }
+}
+@keyframes pepe {
+  from,
+  33%,
+  66%,
+  to {
+    transform: rotate(4deg);
+  }
+  16%,
+  50%,
+  83% {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes lePeek {
+  25% {
+    transform: rotateX(30deg) translateY(5px) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(5deg) scale(1.1);
+  }
+}

@@ -1,16 +1,20 @@
-import React from 'react'
-import { Provider } from 'react-redux'
-import store from '../redux/store'
-import User from './User'
-import UserForm from './UserForm'
+import React, { useMemo, useState } from 'react'
+import Filter from './Filter'
+import UserList from './UserList'
 
 function App() {
+  const [filter, setFilter] = useState('')
+
+  const expensiveUsers = useMemo(() => {
+    return <UserList filter={filter} />
+  }, [filter])
+
   return (
-    <Provider store={store}>
-      <h2>User Profile</h2>
-      <User />
-      <UserForm />
-    </Provider>
+    <>
+      <h2>Redux filter</h2>
+      <Filter filter={filter} setFilter={setFilter} />
+      {expensiveUsers}
+    </>
   )
 }
 

@@ -1,0 +1,53 @@
+@use './breakpoints' as *;
+@use './variables' as *;
+
+html {
+  scroll-behavior: smooth; /* Примечание: Страница прокручивается плавно */
+}
+
+body {
+  font-family: Mail Sans Roman;
+  color: $main-black;
+
+  padding: 10px 16px 23px;
+  overflow-x: hidden;
+
+  @include for-medium-up {
+    padding: 10px 0 0;
+  }
+}
+input,
+textarea,
+button {
+  font-family: Mail Sans Roman;
+  outline: none;
+}
+main,
+header,
+footer {
+  margin: 0 auto;
+  @include for-medium-up {
+    max-width: 580px;
+  }
+  @include for-large-up {
+    max-width: 890px;
+  }
+  @include for-xl-up {
+    max-width: 1180px;
+  }
+}
+
+main,
+header,
+footer {
+  margin: 0 auto;
+  @include for-medium-up {
+    max-width: 580px;
+  }
+  @include for-large-up {
+    max-width: 890px;
+  }
+  @include for-xl-up {
+    max-width: 1180px;
+  }
+}
