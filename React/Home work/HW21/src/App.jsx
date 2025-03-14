@@ -1,3 +1,4 @@
+import { Button } from '@mui/material'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Question from './components/Question'
@@ -32,8 +33,9 @@ function App() {
           />
         ))}
       </ul>
-      <button onClick={handleSubmit}>Submit</button>
-
+      <Button className='submitBtn' variant='contained' onClick={handleSubmit}>
+        Submit
+      </Button>
       <Result />
     </>
   )

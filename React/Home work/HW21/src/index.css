@@ -24,3 +24,10 @@ body {
   color: var(--color-text);
   line-height: var(--line-height-basic);
 }
+ul,
+ol {
+  list-style: none;
+}
+.submitBtn {
+  width: 300px;
+}
