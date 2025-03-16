@@ -24,9 +24,9 @@ export default function Quote() {
       {isError && <Typography>{message}</Typography>}
       {isSuccess && (
         <>
-          <Typography variant='h6' gutterBottom>
+          <Typography variant='subtitle1' gutterBottom sx={{ marginLeft: 3 }}>
             {/* если по заданию то там будет quote.q */}
-            {quote.quote}
+            {`"${quote.quote}"`}
           </Typography>
           <Typography variant='h6' gutterBottom sx={{ textAlign: 'end' }}>
             {/* если по заданию то там будет quote.a */}
@@ -36,7 +36,7 @@ export default function Quote() {
       )}
 
       <Button variant='outlined' onClick={handleClick}>
-        Outlined
+        New Quote
       </Button>
     </div>
   )
