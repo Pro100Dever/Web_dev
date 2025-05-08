@@ -113,3 +113,56 @@ function getOnlySrt(anyObj: Obj[]) {
 }
 
 console.log(getOnlySrt(anyObj))
+
+// Создайте два интерфейса: "Person" с полями имя и возраст, и "Employee" с полем должность.
+// Расширьте интерфейс "Employee" от "Person" и создайте объект этого типа.
+
+interface Person {
+  name: string
+  age: number
+}
+interface Employee extends Person {
+  member: string
+}
+
+const employee: Employee = {
+  member: 'abc',
+  name: 'person',
+  age: 7,
+}
+
+/////////////////////////////////////////////
+
+interface IDescription {
+  title: string
+  description: string
+}
+
+interface IAdditionalInfo {
+  // [key: string]: any
+  fullName: string
+  handler: (param: string | number) => void
+}
+
+interface IFullInfo extends IAdditionalInfo {
+  username: string
+  name: string
+  isAuth: boolean
+  fullInfo: IDescription | null
+}
+
+/////////////////////////////////////////////
+
+interface IFunction {
+  (a: number, b: number): number
+}
+
+const getSum2: IFunction = (a, b) => {
+  return a + b
+}
+
+const userArr: IFullInfo[] = []
+
+function getObj(users: IFullInfo[]): void {
+  return users.forEach(item => console.log(item))
+}
