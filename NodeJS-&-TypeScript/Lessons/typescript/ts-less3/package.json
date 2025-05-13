@@ -1,0 +1,16 @@
+{
+  "name": "ts-less3",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "knip": "^5.55.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "bun --watch run ./src/index.ts"
+  },
+  "type": "module"
+}
