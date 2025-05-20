@@ -2,10 +2,12 @@ import 'dotenv/config'
 import express from 'express'
 import { connectToDatabase } from './db/index.js'
 import balanceRouter from './routes/balanceRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 
 const app = express()
 app.use(express.json())
 app.use('/api', balanceRouter)
+app.use('/user', userRoutes)
 
 const port = process.env.PORT || 3333
 
