@@ -1,7 +1,13 @@
+import bcrypt from 'bcrypt'
 import 'dotenv/config.js'
 import express from 'express'
 import sequelize from './config/db.js'
-import Book from './models/Book.js'
+import {
+  checkAuth,
+  checkMustChangePassword,
+} from './middleware/authMiddleware.js'
+import adminOnly from './middleware/secureRoutesMiddleware.js'
+import User from './models/User.js'
 
 const app = express()
 app.use(express.json())
@@ -11,37 +17,119 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hello, sequelize!' })
 })
 
-// GET /books — получить все книги
-app.get('/books', async (req, res) => {
-  const books = await Book.findAll()
-  res.json(books)
+app.get('/users', async (req, res) => {
+  const user = await User.findAll()
+  res.json(user)
 })
 
-// POST /books — создать книгу
-app.post('/books', async (req, res) => {
-  const book = await Book.create(req.body)
-  res.status(201).json(book)
+app.post('/register', async (req, res) => {
+  const { email, password, mustChangePassword, role } = req.body
+  if (!email || !password) {
+    return res.status(400).json({ error: 'Email and password are required' })
+  }
+  const existingUser = await User.findOne({ where: { email } })
+  if (existingUser) {
+    return res
+      .status(400)
+      .json({ error: 'User with this email already exists' })
+  }
+  const hashedPassword = await bcrypt.hash(password, 10)
+  const User = await User.create({
+    email,
+    password: hashedPassword,
+    mustChangePassword: mustChangePassword || false,
+    role: role || 'user',
+  })
+  res.status(201).json(User)
 })
 
-// PUT /books/:id — обновить книгу
-app.put('/books/:id', async (req, res) => {
-  const book = await Book.findByPk(req.params.id)
-  if (book) {
-    await book.update(req.body)
-    res.json(book)
-  } else {
-    res.status(404).json({ error: 'Book not found' })
+app.post('/change-password', checkMustChangePassword, async (req, res) => {
+  try {
+    const { newPassword } = req.body
+    if (!newPassword || newPassword.length < 6) {
+      return res
+        .status(400)
+        .json({ error: 'Пароль должен быть не короче 6 символов' })
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10)
+    const user = await User.findByPk(req.user.id)
+    if (!user) return res.status(404).json({ error: 'Пользователь не найден' })
+
+    user.password = hashedPassword
+    user.mustChangePassword = false
+    await user.save()
+
+    res.json({ message: 'Пароль успешно обновлён' })
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'Ошибка сервера' })
   }
 })
 
-// DELETE /books/:id — удалить книгу
-app.delete('/books/:id', async (req, res) => {
-  const book = await Book.findByPk(req.params.id)
-  if (book) {
-    await book.destroy()
-    res.json({ message: 'Book deleted' })
-  } else {
-    res.status(404).json({ error: 'Book not found' })
+app.delete('/delete-account', checkAuth, async (req, res) => {
+  try {
+    const id = req.user.id
+    const curPass = req.body.password
+
+    if (!curPass) {
+      return res.status(400).json({ error: 'Пароль обязателен' })
+    }
+
+    const user = await User.findByPk(id)
+
+    if (!user) {
+      return res.status(404).json({ error: 'Пользователь не найден' })
+    }
+
+    const checkPass = await bcrypt.compare(curPass, user.password)
+    if (!checkPass) {
+      return res.status(400).json({ error: 'Неверный пароль' })
+    }
+
+    await user.destroy()
+    res.json({ message: 'Аккаунт удалён' })
+  } catch (error) {
+    console.error(error)
+    return res.status(500).json({ error: 'Ошибка сервера' })
+  }
+})
+
+app.get('/admin', adminOnly, async (req, res) => {
+  res.json('Admin only Page')
+})
+
+app.post('/change-email', checkAuth, async (req, res) => {
+  try {
+    const { email: newEmail, password: curPassword } = req.body
+    if (!newEmail || !curPassword || curPassword.length < 6) {
+      return res
+        .status(400)
+        .json({ error: 'Нужны все данные и пароль минимум 6 символов' })
+    }
+    const user = await User.findByPk(req.user.id)
+    if (!user) {
+      return res.status(404).json({ error: 'Пользователь не найден' })
+    }
+    // Проверяем текущий пароль
+    const isPasswordCorrect = await bcrypt.compare(curPassword, user.password)
+    if (!isPasswordCorrect) {
+      return res.status(400).json({ error: 'Неверный пароль' })
+    }
+    // Проверяем, что новый email уникален
+    const emailExists = await User.findOne({ where: { email: newEmail } })
+    if (emailExists) {
+      return res.status(400).json({ error: 'Этот email уже занят' })
+    }
+
+    // Обновляем email и сохраняем пользователя
+    user.email = newEmail
+    await user.save()
+
+    res.json({ message: 'Email успешно обновлён' })
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'Ошибка сервера' })
   }
 })
 
