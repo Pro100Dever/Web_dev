@@ -11,43 +11,33 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hello, sequelize!' })
 })
 
-// GET /books — получить все книги
-app.get('/books', async (req, res) => {
-  const books = await Book.findAll()
-  res.json(books)
-})
-
-// POST /books — создать книгу
-app.post('/books', async (req, res) => {
-  const book = await Book.create(req.body)
-  res.status(201).json(book)
-})
-
-// PUT /books/:id — обновить книгу
-app.put('/books/:id', async (req, res) => {
-  const book = await Book.findByPk(req.params.id)
-  if (book) {
-    await book.update(req.body)
-    res.json(book)
-  } else {
-    res.status(404).json({ error: 'Book not found' })
+const createBooks = async () => {
+  try {
+    const newBook = await Book.create({
+      title: 'Book1',
+      author: 'Johnny',
+      year: 2002,
+    })
+    console.log(newBook)
+  } catch (error) {
+    console.error(`Error: ${error}`)
   }
-})
+}
 
-// DELETE /books/:id — удалить книгу
-app.delete('/books/:id', async (req, res) => {
-  const book = await Book.findByPk(req.params.id)
-  if (book) {
-    await book.destroy()
-    res.json({ message: 'Book deleted' })
-  } else {
-    res.status(404).json({ error: 'Book not found' })
+const getAllBooks = async () => {
+  try {
+    const books = await Book.findAll()
+    console.log('All books', books)
+  } catch (error) {
+    console.error(`Error: ${error}`)
   }
-})
+}
 
 app.listen(PORT, async () => {
   try {
     await sequelize.authenticate()
+    createBooks()
+    getAllBooks()
     console.log('successfully connected to DB')
     console.log(`server is running on port http://127.0.0.1:${PORT}`)
   } catch (error) {
