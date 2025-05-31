@@ -15,5 +15,5 @@ const productSchema = new mongoose.Schema({
   },
 })
 
-const product = mongoose.model('Transaction', productSchema)
-export { product }
+const Product = mongoose.model('Transaction', productSchema)
+export { Product }
